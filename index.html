@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdelghny Orogat - Professional CV</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <style>
         /* General Reset */
         * {
@@ -18,7 +20,7 @@
             line-height: 1.6;
             color: #333;
             margin: 0;
-            display: flex;
+            /* display: flex; */
         }
 
         /* Sidebar Menu */
@@ -32,6 +34,47 @@
             top: 0;
             left: 0;
         }
+
+        .content {
+            max-height: 100px;
+            /* Set a smaller initial height */
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Add a gradient fade effect at the bottom */
+        .content::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            /* Adjust the fade height as needed */
+            background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+            pointer-events: none;
+            /* Prevent interaction with the fade */
+        }
+
+        .toggle-btn {
+            background: transparent;
+            color: #0073e6;
+            /* Match your theme color */
+            border: 0px solid #0073e6;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .toggle-btn:hover {
+            color: #005bb5;
+            border-color: #005bb5;
+            /* Darken on hover for effect */
+        }
+
+
+
 
         .sidebar h2 {
             font-size: 1.2rem;
@@ -111,6 +154,7 @@
             text-align: center;
             padding: 1rem 0;
             margin-top: 2rem;
+            display: block;
         }
 
         .education {
@@ -317,15 +361,27 @@
                     <h3>Research Assistant</h3>
                     <p><strong>Institution:</strong> Carleton University, Canada</p>
                     <p><strong>Duration:</strong> 2020 - 2024</p>
-                    <p><strong>Responsibilities:</strong> Conducted research in knowledge graphs and NLP, focusing on developing tools for benchmarking and evaluating question-answering systems. Contributed to the following projects:</p>
+                    <p><strong>Responsibilities:</strong> Conducted research in knowledge graphs and NLP, focusing on
+                        developing tools for benchmarking and evaluating question-answering systems. Contributed to the
+                        following projects:</p>
                     <ul>
-                        <li><strong>CBench:</strong> An extensible benchmarking suite for evaluating question-answering systems over knowledge graphs. <a href="https://github.com/aorogat/CBench" target="_blank">GitHub Repository</a></li>
-                        <li><strong>Maestro:</strong> A system for automatic benchmark generation tailored for QA over knowledge graphs. <a href="https://github.com/aorogat/Maestro" target="_blank">GitHub Repository</a></li>
-                        <li><strong>QueryBridge:</strong> A high-quality dataset with over one million annotated questions for knowledge graph QA research. <a href="https://huggingface.co/datasets/aorogat/QueryBridge" target="_blank">Hugging Face Dataset</a></li>
-                        <li><strong>Ericsogate:</strong> A six-layer knowledge graph system for managing diverse data sources within Ericsson, enhancing CloudRAN data management. <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033" target="_blank">ACM Digital Library</a></li>
+                        <li><strong>CBench:</strong> An extensible benchmarking suite for evaluating question-answering
+                            systems over knowledge graphs. <a href="https://github.com/aorogat/CBench"
+                                target="_blank">GitHub Repository</a></li>
+                        <li><strong>Maestro:</strong> A system for automatic benchmark generation tailored for QA over
+                            knowledge graphs. <a href="https://github.com/aorogat/Maestro" target="_blank">GitHub
+                                Repository</a></li>
+                        <li><strong>QueryBridge:</strong> A high-quality dataset with over one million annotated
+                            questions for knowledge graph QA research. <a
+                                href="https://huggingface.co/datasets/aorogat/QueryBridge" target="_blank">Hugging Face
+                                Dataset</a></li>
+                        <li><strong>Ericsogate:</strong> A six-layer knowledge graph system for managing diverse data
+                            sources within Ericsson, enhancing CloudRAN data management. <a
+                                href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033" target="_blank">ACM Digital
+                                Library</a></li>
                     </ul>
                 </div>
-                
+
 
                 <div class="experience-entry">
                     <h3>Contract Instructor</h3>
@@ -356,99 +412,160 @@
                     <h3>Star: A Question Answering System over Knowledge Graphs</h3>
                     <p><strong>Institution:</strong> Carleton University (In Progress)</p>
                     <p><strong>Completion Year:</strong> Expected 2024</p>
-                    <p><strong>Description:</strong> Developed a question-answering system designed to interpret natural language queries using large language models (LLMs). The system leverages techniques like Retrieval-Augmented Generation (RAG) and LoRA fine-tuning to enhance accuracy and efficiency in retrieving and answering queries over complex knowledge graphs. One stage of the project focuses on defining natural language query (NLQ) components, utilizing LLaMA-3 fine-tuned on the QueryBridge dataset, as demonstrated in the video below.</p>
-                    <p><strong>Technologies:</strong> PyTorch, LlamaIndex, OpenAI API, Semantic Web</p>
-                    
-                    <!-- Embedded YouTube Video -->
-                    <div style="margin-top: 1rem;">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/J_N-6m8fHz0" 
-                            title="Star Project Demo Video" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
+                    <div class="content">
+                        <p><strong>Description:</strong> Developed a question-answering system designed to interpret
+                            natural
+                            language queries using large language models (LLMs). The system leverages techniques like
+                            Retrieval-Augmented Generation (RAG) and LoRA fine-tuning to enhance accuracy and efficiency
+                            in
+                            retrieving and answering queries over complex knowledge graphs. One stage of the project
+                            focuses
+                            on defining natural language query (NLQ) components, utilizing LLaMA-3 fine-tuned on the
+                            QueryBridge dataset, as demonstrated in the video below.</p>
+                        <p><strong>Technologies:</strong> PyTorch, LlamaIndex, OpenAI API, Semantic Web</p>
+
+                        <!-- Embedded YouTube Video -->
+                        <div style="margin-top: 1rem;">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/J_N-6m8fHz0"
+                                title="Star Project Demo Video" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
                     </div>
+
+                    <!-- More Details ... Button -->
+                    <button class="toggle-btn">More Details ...</button>
                 </div>
-                
-        
+
+
                 <div class="experience-entry">
                     <h3>QueryBridge: Dataset for QA over Knowledge Graphs</h3>
                     <p><strong>Institution:</strong> Carleton University (In Progress)</p>
                     <p><strong>Completion Year:</strong> 2024</p>
-                    <p><strong>Description:</strong> Created an extensive dataset containing over one million annotated questions with SPARQL queries. QueryBridge is aimed at supporting research in question-answering systems by providing a high-quality benchmark for natural language queries over knowledge graphs.</p>
-                    <p><strong>Technologies:</strong> Java, Apache Jena, RDF, SPARQL, Semantic Web</p>
-                    <p><strong>Link:</strong> <a href="https://huggingface.co/datasets/aorogat/QueryBridge" target="_blank">QueryBridge Dataset on Hugging Face</a></p>
+                    <div class="content">
+                        <p><strong>Description:</strong> Created an extensive dataset containing over one million
+                            annotated
+                            questions with SPARQL queries. QueryBridge is aimed at supporting research in
+                            question-answering
+                            systems by providing a high-quality benchmark for natural language queries over knowledge
+                            graphs.</p>
+                        <p><strong>Technologies:</strong> Java, Apache Jena, RDF, SPARQL, Semantic Web</p>
+                        <p><strong>Link:</strong> <a href="https://huggingface.co/datasets/aorogat/QueryBridge"
+                                target="_blank">QueryBridge Dataset on Hugging Face</a></p>
+                    </div>
+                    <!-- More Details ... Button -->
+                    <button class="toggle-btn">More Details ...</button>
                 </div>
-                
-                
+
+
                 <div class="experience-entry">
                     <h3>Ericsogate: Knowledge Graph System for CloudRAN Data Management</h3>
                     <p><strong>Company:</strong> Ericsson</p>
                     <p><strong>Completion Year:</strong> 2023</p>
-                    <p><strong>Description:</strong> Developed a six-layer knowledge graph framework to efficiently manage CloudRAN data. The system enhances data accessibility, adaptability, and insight generation for telecom applications by using a modular and scalable architecture.</p>
-                    <p><strong>Technologies:</strong> Java, RDF, OWL, Apache Jena, Python</p>
-                
-                    <!-- Corrected Embedded YouTube Video -->
-                    <div style="margin-top: 1rem;">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/vDG0cBineus" 
-                            title="Ericsogate Project Demo Video" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
+                    <div class="content">
+                        <p><strong>Description:</strong> Developed a six-layer knowledge graph framework to efficiently
+                            manage CloudRAN data. The system enhances data accessibility, adaptability, and insight
+                            generation for telecom applications by using a modular and scalable architecture.</p>
+                        <p><strong>Technologies:</strong> Java, RDF, OWL, Apache Jena, Python</p>
+
+                        <!-- Embedded YouTube Video -->
+                        <div style="margin-top: 1rem;">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/vDG0cBineus"
+                                title="Ericsogate Project Demo Video" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
                     </div>
+                    <!-- More Details ... Button -->
+                    <button class="toggle-btn">More Details ...</button>
                 </div>
 
-        
+
+
                 <div class="experience-entry">
                     <h3>Knowledge Graph Summarizer</h3>
                     <p><strong>Company:</strong> Ericsson</p>
                     <p><strong>Completion Year:</strong> 2023</p>
-                    <p><strong>Description:</strong> Created a summarization tool for knowledge graphs, designed to simplify large datasets by identifying key patterns and aggregating related nodes and edges. This project improves data analysis and allows stakeholders to quickly understand trends in complex datasets.</p>
-                    <p><strong>Technologies:</strong> Java, Semantic Web, RDF, OWL, Apache Jena</p>
+                    <div class="content">
+                        <p><strong>Description:</strong> Created a summarization tool for knowledge graphs, designed to
+                            simplify large datasets by identifying key patterns and aggregating related nodes and edges.
+                            This project improves data analysis and allows stakeholders to quickly understand trends in
+                            complex datasets.</p>
+                        <p><strong>Technologies:</strong> Java, Semantic Web, RDF, OWL, Apache Jena</p>
+                    </div>
+
+                    <!-- More Details ... Button -->
+                    <button class="toggle-btn">More Details ...</button>
                 </div>
-        
+
                 <div class="experience-entry">
                     <h3>Maestro: Benchmark Generation System</h3>
                     <p><strong>Institution:</strong> Carleton University</p>
                     <p><strong>Completion Year:</strong> 2022</p>
-                    <p><strong>Description:</strong> Designed a system for automatic benchmark generation tailored for question-answering systems over knowledge graphs. Maestro generates benchmarks that cover linguistic and syntactic properties, providing a thorough testbed for evaluating QA systems.</p>
+                    <p><strong>Description:</strong> Designed a system for automatic benchmark generation tailored for
+                        question-answering systems over knowledge graphs. Maestro generates benchmarks that cover
+                        linguistic and syntactic properties, providing a thorough testbed for evaluating QA systems.</p>
                     <p><strong>Technologies:</strong> Java, Apache Jena, Python, NLTK</p>
                 </div>
             </div>
         </section>
-        
+
         <section class="main-section">
             <h2>Publications</h2>
             <ul>
-                <li><strong>Ericsogate:</strong> Advancing Analytics and Management of Data within Ericsson 
-                    <em>(CIKM 2024)</em> - 
-                    <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033" target="_blank">Paper</a> 
+                <li><strong>Ericsogate:</strong> Advancing Analytics and Management of Data within Ericsson
+                    <em>(CIKM 2024)</em> -
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033" target="_blank">Paper</a>
                 </li>
-                
-                <li><strong>Maestro:</strong> Benchmark Generation for QA over Knowledge Graphs 
-                    <em>(SIGMOD 2023)</em> - 
-                    <a href="https://dl.acm.org/doi/abs/10.1145/3589322" target="_blank">Paper</a> | 
+
+                <li><strong>Maestro:</strong> Benchmark Generation for QA over Knowledge Graphs
+                    <em>(SIGMOD 2023)</em> -
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3589322" target="_blank">Paper</a> |
                     <a href="https://github.com/aorogat/Maestro" target="_blank">GitHub</a>
                 </li>
-        
-                <li><strong>CBench:</strong> Comprehensive Benchmarking Suite for QA over Knowledge Graphs 
-                    <em>(VLDB 2022)</em> - 
-                    <a href="https://dl.acm.org/doi/10.14778/3476311.3476326" target="_blank">Paper</a> | 
-                    <a href="https://github.com/aorogat/CBench" target="_blank">GitHub</a> | 
+
+                <li><strong>CBench:</strong> Comprehensive Benchmarking Suite for QA over Knowledge Graphs
+                    <em>(VLDB 2022)</em> -
+                    <a href="https://dl.acm.org/doi/10.14778/3476311.3476326" target="_blank">Paper</a> |
+                    <a href="https://github.com/aorogat/CBench" target="_blank">GitHub</a> |
                     <a href="https://demo.cbench.com" target="_blank">Demo</a>
                 </li>
-        
-                <li><strong>QueryBridge:</strong> One Million Annotated Questions with SPARQL Queries - Dataset for QA over Knowledge Graphs 
-                    <em>(Carleton University, 2024)</em> - 
-                    <a href="https://huggingface.co/datasets/aorogat/QueryBridge" target="_blank">Dataset</a> | 
-                    <a href="https://github.com/aorogat/QueryBridge" target="_blank">GitHub</a> | 
+
+                <li><strong>QueryBridge:</strong> One Million Annotated Questions with SPARQL Queries - Dataset for QA
+                    over Knowledge Graphs
+                    <em>(Carleton University, 2024)</em> -
+                    <a href="https://huggingface.co/datasets/aorogat/QueryBridge" target="_blank">Dataset</a> |
+                    <a href="https://github.com/aorogat/QueryBridge" target="_blank">GitHub</a> |
                     <a href="https://demo.querybridge.com" target="_blank">Demo</a>
                 </li>
             </ul>
         </section>
-        
+
     </div>
 
     <footer>
         <p>&copy; 2024 Abdelghny Orogat</p>
     </footer>
+
+    <script>
+        $(document).ready(function () {
+            $(".toggle-btn").click(function () {
+                var content = $(this).prev(".content"); // Target the .content div
+
+                // Toggle max-height to expand/collapse
+                if (content.css("max-height") === "100px") {
+                    content.css("max-height", "none"); // Expand fully
+                    $(this).text("See Less");
+                } else {
+                    content.css("max-height", "100px"); // Collapse back
+                    $(this).text("More Details ...");
+                }
+            });
+        });
+    </script>
+
+
+
 
 </body>
 
