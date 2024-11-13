@@ -197,7 +197,7 @@
         }
 
         .experience-entry {
-            width: 48%;
+            width: 98%;
             /* Keeps entries side-by-side on larger screens */
             margin-bottom: 1rem;
             font-size: 0.9rem;
@@ -211,8 +211,34 @@
             margin: 0.3rem 0;
         }
 
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+
+        .video-container,
+        .text-container {
+            flex: 1 1 48%;
+            /* Each takes 50% of the width */
+            max-width: 48%;
+            /* Ensures they don’t exceed half the width */
+        }
+
         /* Add media query for responsive adjustments on smaller screens */
         @media (max-width: 768px) {
+
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            .video-container,
+            .text-container {
+                max-width: 100%;
+                /* Full width on smaller screens */
+            }
 
             /* Ensure sidebar collapses on smaller screens */
             .sidebar {
@@ -264,7 +290,15 @@
         <section id="about" class="main-section">
             <h2>About Me</h2>
             <p>
-                Abdelghny Orogat is a PhD candidate at Carleton University, specializing in Question Answering over Knowledge Graphs. His research has led to several publications in prestigious journals and conferences (e.g., SIGMOD, VLDB, and CIKM). Abdelghany's industry experience encompasses knowledge graph construction, management, summarization, and developing applications that leverage these graphs. His proficiency in Natural Language Processing (NLP) has significantly enhanced his contributions to the field. In addition to his research endeavors, Abdelghany has held academic positions as a Contract Instructor (Lecturer) at Carleton University. He also holds a Master of Science in Computer Engineering from Tanta University, Egypt, where his thesis focused on adapting webpages to convert unresponsive designs into responsive formats.
+                Abdelghny Orogat is a PhD candidate at Carleton University, specializing in Question Answering over
+                Knowledge Graphs. His research has led to several publications in prestigious journals and conferences
+                (e.g., SIGMOD, VLDB, and CIKM). Abdelghany's industry experience encompasses knowledge graph
+                construction, management, summarization, and developing applications that leverage these graphs. His
+                proficiency in Natural Language Processing (NLP) has significantly enhanced his contributions to the
+                field. In addition to his research endeavors, Abdelghany has held academic positions as a Contract
+                Instructor (Lecturer) at Carleton University. He also holds a Master of Science in Computer Engineering
+                from Tanta University, Egypt, where his thesis focused on adapting webpages to convert unresponsive
+                designs into responsive formats.
             </p>
         </section>
 
@@ -274,7 +308,7 @@
                 <li>Knowledge Graphs</li>
                 <li>Natural Language Processing</li>
                 <li>Information Reterival</li>
-                <li>Graph Mining</li>
+                <li>Large Language Models (LLMs)</li>
             </ul>
         </section>
 
@@ -317,82 +351,120 @@
                 <div class="experience-entry">
                     <h3>Gen AI Engineer (Internship)</h3>
                     <p><strong>Company:</strong> Ericsson, Ottawa, Canada</p>
-                    <p><strong>Duration:</strong> July 2024 - Oct 2024</p>
-                    <p><strong>Responsibilities:</strong> During my time at Ericsson, we developed a two-stage approach
-                        to improve the Retrieval-Augmented Generation (RAG) system for large language models. Our
-                        approach combines the efficiency of a single embedding for fast retrieval with the accuracy of a
-                        multi-embedding strategy, leveraging the COLBERT model. In the first stage, we quickly retrieve
-                        a set of the top documents from a large collection using single embeddings. Then, in the second
-                        stage, we apply multi-embedding retrieval on this subset to identify the best match. For this
-                        project, we used Milvus as the vector database to manage embeddings effectively.</p>
+                    <div class="content">
+                        <p><strong>Duration:</strong> July 2024 - Oct 2024</p>
+                        <p><strong>Responsibilities:</strong> During my time at Ericsson, we developed a two-stage
+                            approach
+                            to improve the Retrieval-Augmented Generation (RAG) system for large language models. Our
+                            approach combines the efficiency of a single embedding for fast retrieval with the accuracy
+                            of a
+                            multi-embedding strategy, leveraging the COLBERT model. In the first stage, we quickly
+                            retrieve
+                            a set of the top documents from a large collection using single embeddings. Then, in the
+                            second
+                            stage, we apply multi-embedding retrieval on this subset to identify the best match. For
+                            this
+                            project, we used Milvus as the vector database to manage embeddings effectively.</p>
+                    </div>
+                    <!-- More Details ... Button -->
+                    <button class="toggle-btn">More Details ...</button>
                 </div>
 
                 <div class="experience-entry">
                     <h3>Knowledge Graphs Engineer (Internship)</h3>
                     <p><strong>Company:</strong> Ericsson, Ottawa, Canada</p>
-                    <p><strong>Duration:</strong> Feb 2023 - Oct 2023</p>
-                    <p><strong>Responsibilities:</strong> During my time at Ericsson, I held the position of a Knowledge
-                        Graph Engineer, specializing in data integration from diverse sources, including structural,
-                        semi-structural, and unstructured data. My primary focus was on developing efficient methods to
-                        integrate and consolidate data into Knowledge Graphs, enabling seamless access and utilization
-                        of information. Additionally, I actively contributed to the development of applications built on
-                        top of Knowledge Graphs, such as a Semantic Search Engine and Knowledge Graph Summarization
-                        tools. These applications aimed to enhance search capabilities and provide condensed insights
-                        from complex knowledge repositories.
-                        </br>
-                        This work has been published in The 33rd ACM International Conference on Information and
-                        Knowledge Management (CIKM).
-                        </br>
-                        <strong>Paper title:</strong> <a
-                            href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033">"Ericsogate: Advancing Analytics
-                            and Management of Data from Diverse Sources within Ericsson Using Knowledge Graphs"</a>
-                    </p>
+                    <div class="content">
+                        <p><strong>Duration:</strong> Feb 2023 - Oct 2023</p>
+                        <p><strong>Responsibilities:</strong> During my time at Ericsson, I held the position of a
+                            Knowledge
+                            Graph Engineer, specializing in data integration from diverse sources, including structural,
+                            semi-structural, and unstructured data. My primary focus was on developing efficient methods
+                            to
+                            integrate and consolidate data into Knowledge Graphs, enabling seamless access and
+                            utilization
+                            of information. Additionally, I actively contributed to the development of applications
+                            built on
+                            top of Knowledge Graphs, such as a Semantic Search Engine and Knowledge Graph Summarization
+                            tools. These applications aimed to enhance search capabilities and provide condensed
+                            insights
+                            from complex knowledge repositories.
+                            </br>
+                            This work has been published in The 33rd ACM International Conference on Information and
+                            Knowledge Management (CIKM).
+                            </br>
+                            <strong>Paper title:</strong> <a
+                                href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033">"Ericsogate: Advancing
+                                Analytics
+                                and Management of Data from Diverse Sources within Ericsson Using Knowledge Graphs"</a>
+                        </p>
+                    </div>
+                    <!-- More Details ... Button -->
+                    <button class="toggle-btn">More Details ...</button>
                 </div>
 
                 <div class="experience-entry">
-                    <h3>Research Assistant</h3>
+                    <h3>Research Assistant (Ph.D Student)</h3>
                     <p><strong>Institution:</strong> Carleton University, Canada</p>
-                    <p><strong>Duration:</strong> 2020 - 2024</p>
-                    <p><strong>Responsibilities:</strong> Conducted research in knowledge graphs and NLP, focusing on
-                        developing tools for benchmarking and evaluating question-answering systems. Contributed to the
-                        following projects:</p>
-                    <ul>
-                        <li><strong>CBench:</strong> An extensible benchmarking suite for evaluating question-answering
-                            systems over knowledge graphs. <a href="https://github.com/aorogat/CBench"
-                                target="_blank">GitHub Repository</a></li>
-                        <li><strong>Maestro:</strong> A system for automatic benchmark generation tailored for QA over
-                            knowledge graphs. <a href="https://github.com/aorogat/Maestro" target="_blank">GitHub
-                                Repository</a></li>
-                        <li><strong>QueryBridge:</strong> A high-quality dataset with over one million annotated
-                            questions for knowledge graph QA research. <a
-                                href="https://huggingface.co/datasets/aorogat/QueryBridge" target="_blank">Hugging Face
-                                Dataset</a></li>
-                        <li><strong>Ericsogate:</strong> A six-layer knowledge graph system for managing diverse data
-                            sources within Ericsson, enhancing CloudRAN data management. <a
-                                href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033" target="_blank">ACM Digital
-                                Library</a></li>
-                    </ul>
+                    <div class="content">
+                        <p><strong>Duration:</strong> 2020 - 2024</p>
+                        <p><strong>Responsibilities:</strong> Conducted research in knowledge graphs and NLP, focusing
+                            on
+                            developing tools for benchmarking and evaluating question-answering systems. Contributed to
+                            the
+                            following projects:</p>
+                        <ul>
+                            <li><strong>CBench:</strong> An extensible benchmarking suite for evaluating
+                                question-answering
+                                systems over knowledge graphs. <a href="https://github.com/aorogat/CBench"
+                                    target="_blank">GitHub Repository</a></li>
+                            <li><strong>Maestro:</strong> A system for automatic benchmark generation tailored for QA
+                                over
+                                knowledge graphs. <a href="https://github.com/aorogat/Maestro" target="_blank">GitHub
+                                    Repository</a></li>
+                            <li><strong>QueryBridge:</strong> A high-quality dataset with over one million annotated
+                                questions for knowledge graph QA research. <a
+                                    href="https://huggingface.co/datasets/aorogat/QueryBridge" target="_blank">Hugging
+                                    Face
+                                    Dataset</a></li>
+                            <li><strong>Ericsogate:</strong> A six-layer knowledge graph system for managing diverse
+                                data
+                                sources within Ericsson, enhancing CloudRAN data management. <a
+                                    href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033" target="_blank">ACM
+                                    Digital
+                                    Library</a></li>
+                        </ul>
+                    </div>
+                    <!-- More Details ... Button -->
+                    <button class="toggle-btn">More Details ...</button>
                 </div>
 
 
                 <div class="experience-entry">
-                    <h3>Contract Instructor</h3>
+                    <h3>Contract Instructor (Lecturer)</h3>
                     <p><strong>Institution:</strong> Carleton University, Canada</p>
-                    <p><strong>Duration:</strong> Sep 2022 - Present</p>
-                    <p><strong>Responsibilities:</strong> As a Contract Instructor for the Database Management Systems
-                        course, I expertly guide students through essential topics such as Relational Algebra, Tuple
-                        Relational Calculus, and SQL operations. I empower students to design efficient databases using
-                        ER Modeling and provide guidance on Functional Dependencies, Normalization, and Application
-                        Development. Additionally, I introduce students to NOSQL databases, including Document-Oriented
-                        and Graph-Oriented variants, fostering a comprehensive understanding of data management. I
-                        design the entire curriculum, creating my own lecture materials, slides, and assignments to
-                        provide students with an engaging, structured learning experience.</p>
-                    <p><strong>Student Evaluations:</strong>
-                        <a href="https://www.ratemyprofessors.com/professor/2823675" target="_blank">RateMyProfessors
-                            Evaluation</a> |
-                        <a href="pdfs/student_evaluation.pdf" target="_blank" type="application/pdf">Official Student Evaluation
-                            (Sample)</a>
-                    </p>
+                    <div class="content">
+                        <p><strong>Duration:</strong> Sep 2022 - Present</p>
+                        <p><strong>Responsibilities:</strong> As a Contract Instructor for the Database Management
+                            Systems
+                            course, I expertly guide students through essential topics such as Relational Algebra, Tuple
+                            Relational Calculus, and SQL operations. I empower students to design efficient databases
+                            using
+                            ER Modeling and provide guidance on Functional Dependencies, Normalization, and Application
+                            Development. Additionally, I introduce students to NOSQL databases, including
+                            Document-Oriented
+                            and Graph-Oriented variants, fostering a comprehensive understanding of data management. I
+                            design the entire curriculum, creating my own lecture materials, slides, and assignments to
+                            provide students with an engaging, structured learning experience.</p>
+                        <p><strong>Student Evaluations:</strong>
+                            <a href="https://www.ratemyprofessors.com/professor/2823675"
+                                target="_blank">RateMyProfessors
+                                Evaluation</a> |
+                            <a href="path/to/student_evaluation.pdf" target="_blank">Official Student Evaluation
+                                (Sample)</a>
+                        </p>
+                    </div>
+                    <!-- More Details ... Button -->
+                    <button class="toggle-btn">More Details ...</button>
                 </div>
             </div>
         </section>
@@ -400,84 +472,111 @@
         <section id="projects" class="main-section">
             <h2>Selected Projects</h2>
             <div class="projects">
-                <div class="experience-entry">
-                    <h3>Star: A Question Answering System over Knowledge Graphs</h3>
-                    <p><strong>Institution:</strong> Carleton University (In Progress)</p>
-                    <p><strong>Completion Year:</strong> Expected 2024</p>
-                    <div class="content">
-                        <p><strong>Description:</strong> Developed a question-answering system designed to interpret
-                            natural
-                            language queries using large language models (LLMs). The system leverages techniques like
-                            Retrieval-Augmented Generation (RAG) and LoRA fine-tuning to enhance accuracy and efficiency
-                            in
-                            retrieving and answering queries over complex knowledge graphs. One stage of the project
-                            focuses
-                            on defining natural language query (NLQ) components, utilizing LLaMA-3 fine-tuned on the
-                            QueryBridge dataset, as demonstrated in the video below.</p>
-                        <p><strong>Technologies:</strong> PyTorch, LlamaIndex, OpenAI API, Semantic Web</p>
 
-                        <!-- Embedded YouTube Video -->
-                        <div style="margin-top: 1rem;">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/J_N-6m8fHz0"
+                <div class="experience-entry">
+                    <h3>Star: A Question Answering System over Knowledge Graphs [Carleton University (In Progress)]</h3>
+                    <div class="content-wrapper">
+                        <!-- Embedded YouTube Video on the left (taking half the space) -->
+                        <div class="video-container">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/J_N-6m8fHz0"
                                 title="Star Project Demo Video" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
-                    </div>
 
-                    <!-- More Details ... Button -->
-                    <button class="toggle-btn">More Details ...</button>
+                        <!-- Description and Technologies on the right -->
+                        <div class="text-container">
+                            <p><strong>Description:</strong> Developed a question-answering system designed to interpret
+                                natural language queries using large language models (LLMs). The system leverages
+                                techniques like
+                                Retrieval-Augmented Generation (RAG) and LoRA fine-tuning to enhance accuracy and
+                                efficiency
+                                in retrieving and answering queries over complex knowledge graphs. One stage of the
+                                project
+                                focuses on defining natural language query (NLQ) components, utilizing LLaMA-3
+                                fine-tuned on the
+                                QueryBridge dataset, as demonstrated in the video.</p>
+                            <p><strong>Technologies:</strong> PyTorch, LlamaIndex, OpenAI API, Semantic Web</p>
+                        </div>
+                    </div>
                 </div>
 
 
                 <div class="experience-entry">
-                    <h3>QueryBridge: Dataset for QA over Knowledge Graphs</h3>
-                    <p><strong>Institution:</strong> Carleton University (In Progress)</p>
-                    <p><strong>Completion Year:</strong> 2024</p>
-                    <div class="content">
-                        <p><strong>Description:</strong> Created an extensive dataset containing over one million
-                            annotated
-                            questions with SPARQL queries. QueryBridge is aimed at supporting research in
-                            question-answering
-                            systems by providing a high-quality benchmark for natural language queries over knowledge
-                            graphs.</p>
-                        <p><strong>Technologies:</strong> Java, Apache Jena, RDF, SPARQL, Semantic Web</p>
-                        <p><strong>Link:</strong> <a href="https://huggingface.co/datasets/aorogat/QueryBridge"
-                                target="_blank">QueryBridge Dataset on Hugging Face</a></p>
+                    <h3>QueryBridge: One Million Annotated Questions with SPARQL
+                        Queries - Dataset for Question Answering over Knowledge Graph [Carleton University (2024)]</h3>
+                    <!-- <p><strong>Institution:</strong> Carleton University</p>
+                    <p><strong>Completion Year:</strong> 2024</p> -->
+                    <div class="content-wrapper">
+                        <!-- Dataset Viewer on the left (taking half the space) -->
+                        <div class="video-container">
+                            <iframe src="https://huggingface.co/datasets/aorogat/QueryBridge/embed/viewer" width="100%"
+                                height="500px" frameborder="0" allowfullscreen>
+                            </iframe>
+                        </div>
+                
+                        <!-- Description and Technologies on the right -->
+                        <div class="text-container">
+                            <p><strong>Description:</strong> Created an extensive dataset containing over one million
+                                annotated questions with SPARQL queries. QueryBridge is aimed at supporting research in
+                                question-answering systems by providing a high-quality benchmark for natural language queries over knowledge
+                                graphs.</p>
+                            <p><strong>Technologies:</strong> Java, Apache Jena, RDF, SPARQL, Semantic Web</p>
+                        </div>
                     </div>
-                    <!-- More Details ... Button -->
-                    <button class="toggle-btn">More Details ...</button>
                 </div>
+
+                <div class="experience-entry">
+                    <h3>Improved RAG: Two-Stage Retrieval-Augmented Generation System [Carleton University (Completed)]</h3>
+                    <div class="content-wrapper">
+                        <!-- Embedded YouTube Video or Image on the left (taking half the space) -->
+                        <div class="video-container">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/your_video_link_here"
+                                title="Improved RAG Project Demo Video" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                
+                        <!-- Description and Technologies on the right -->
+                        <div class="text-container">
+                            <p><strong>Description:</strong> Developed a two-stage approach to improve the Retrieval-Augmented Generation (RAG) system for large language models. Our approach combines the efficiency of a single embedding for fast retrieval with the accuracy of a multi-embedding strategy, leveraging the COLBERT model. In the first stage, we quickly retrieve a set of the top documents from a large collection using single embeddings. Then, in the second stage, we apply multi-embedding retrieval on this subset to identify the best match. For this project, we used Milvus as the vector database to manage embeddings effectively.</p>
+                            <p><strong>Technologies:</strong> PyTorch, COLBERT Model, Milvus, Vector Databases</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
 
 
                 <div class="experience-entry">
-                    <h3>Ericsogate: Knowledge Graph System for CloudRAN Data Management</h3>
-                    <p><strong>Company:</strong> Ericsson</p>
-                    <p><strong>Completion Year:</strong> 2023</p>
-                    <div class="content">
-                        <p><strong>Description:</strong> Developed a six-layer knowledge graph framework to efficiently
-                            manage CloudRAN data. The system enhances data accessibility, adaptability, and insight
-                            generation for telecom applications by using a modular and scalable architecture.</p>
-                        <p><strong>Technologies:</strong> Java, RDF, OWL, Apache Jena, Python</p>
-
-                        <!-- Embedded YouTube Video -->
-                        <div style="margin-top: 1rem;">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/vDG0cBineus"
+                    <h3>Ericsogate: Knowledge Graph System for CloudRAN Data Management [Ericsson (2023)]</h3>
+                    <div class="content-wrapper">
+                        <!-- Embedded YouTube Video on the left (taking half the space) -->
+                        <div class="video-container">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/vDG0cBineus"
                                 title="Ericsogate Project Demo Video" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
+
+                        <!-- Description and Technologies on the right -->
+                        <div class="text-container">
+                            <p><strong>Description:</strong> Developed a six-layer knowledge graph framework to
+                                efficiently
+                                manage CloudRAN data. The system enhances data accessibility, adaptability, and insight
+                                generation for telecom applications by using a modular and scalable architecture. The
+                                video on the left shows the architecture of Ericsogate. Please note that the code is not
+                                publicly available.</p>
+                            <p><strong>Technologies:</strong> Java, RDF, OWL, Apache Jena, Python</p>
+                        </div>
                     </div>
-                    <!-- More Details ... Button -->
-                    <button class="toggle-btn">More Details ...</button>
                 </div>
 
 
 
+
                 <div class="experience-entry">
-                    <h3>Knowledge Graph Summarizer</h3>
-                    <p><strong>Company:</strong> Ericsson</p>
-                    <p><strong>Completion Year:</strong> 2023</p>
+                    <h3>Knowledge Graph Summarizer [Ericsson (2023)]</h3>
                     <div class="content">
                         <p><strong>Description:</strong> Created a summarization tool for knowledge graphs, designed to
                             simplify large datasets by identifying key patterns and aggregating related nodes and edges.
@@ -491,13 +590,16 @@
                 </div>
 
                 <div class="experience-entry">
-                    <h3>Maestro: Benchmark Generation System</h3>
-                    <p><strong>Institution:</strong> Carleton University</p>
-                    <p><strong>Completion Year:</strong> 2022</p>
-                    <p><strong>Description:</strong> Designed a system for automatic benchmark generation tailored for
-                        question-answering systems over knowledge graphs. Maestro generates benchmarks that cover
-                        linguistic and syntactic properties, providing a thorough testbed for evaluating QA systems.</p>
-                    <p><strong>Technologies:</strong> Java, Apache Jena, Python, NLTK</p>
+                    <h3>Maestro: Benchmark Generation System [Carleton University (2022)]</h3>
+                    <div class="content">
+                        <p><strong>Description:</strong> Designed a system for automatic benchmark generation tailored
+                            for
+                            question-answering systems over knowledge graphs. Maestro generates benchmarks that cover
+                            linguistic and syntactic properties, providing a thorough testbed for evaluating QA systems.
+                        </p>
+                        <p><strong>Technologies:</strong> Java, Apache Jena, Python, NLTK</p>
+                    </div>
+                    <button class="toggle-btn">More Details ...</button>
                 </div>
             </div>
         </section>
@@ -505,30 +607,67 @@
         <section class="main-section" id="publications">
             <h2>Publications</h2>
             <ul>
-                <li><strong>Ericsogate:</strong> Advancing Analytics and Management of Data within Ericsson
-                    <em>(CIKM 2024)</em> -
+                <li><strong>Ericsogate:</strong> Advancing Analytics and Management of Data from Diverse Sources within
+                    Ericsson
+                    <br><em><u>Abdelghny Orogat</u></em>, Sri Lakshmi Vadlamani, Dimple Thomas, Ahmed El-Roby
+                    <br><em>(CIKM 2024)</em> -
                     <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033" target="_blank">Paper</a>
                 </li>
 
-                <li><strong>Maestro:</strong> Benchmark Generation for QA over Knowledge Graphs
-                    <em>(SIGMOD 2023)</em> -
+                <li><strong>Maestro:</strong> Automatic Generation of Comprehensive Benchmarks for QA over Knowledge
+                    Graphs
+                    <br><em><u>Abdelghny Orogat</u></em>, Ahmed El-Roby
+                    <br><em>(SIGMOD 2023)</em> -
                     <a href="https://dl.acm.org/doi/abs/10.1145/3589322" target="_blank">Paper</a> |
                     <a href="https://github.com/aorogat/Maestro" target="_blank">GitHub</a>
                 </li>
 
-                <li><strong>CBench:</strong> Comprehensive Benchmarking Suite for QA over Knowledge Graphs
-                    <em>(VLDB 2022)</em> -
-                    <a href="https://dl.acm.org/doi/10.14778/3476311.3476326" target="_blank">Paper</a> |
-                    <a href="https://github.com/aorogat/CBench" target="_blank">GitHub</a> |
-                    <a href="https://demo.cbench.com" target="_blank">Demo</a>
+                <li><strong>SmartBench (Demo):</strong> Demonstrating Automatic Generation of Comprehensive Benchmarks
+                    for QA over Knowledge Graphs
+                    <br><em><u>Abdelghny Orogat</u></em>, Ahmed El-Roby
+                    <br><em>(VLDB 2022)</em> -
+                    <a href="https://dl.acm.org/doi/10.14778/3561268.3561275" target="_blank">Paper</a>
+                    <a href="https://github.com/aorogat/SmartBenchmark" target="_blank">GitHub</a>
                 </li>
 
-                <li><strong>QueryBridge:</strong> One Million Annotated Questions with SPARQL Queries - Dataset for QA
-                    over Knowledge Graphs
-                    <em>(Carleton University, 2024)</em> -
-                    <a href="https://huggingface.co/datasets/aorogat/QueryBridge" target="_blank">Dataset</a> |
-                    <a href="https://github.com/aorogat/QueryBridge" target="_blank">GitHub</a> |
-                    <a href="https://demo.querybridge.com" target="_blank">Demo</a>
+                <li><strong>CBench:</strong> Towards Better Evaluation of Question Answering Over Knowledge Graphs
+                    <br><em><u>Abdelghny Orogat</u></em>, Isabelle Liu, Ahmed El-Roby
+                    <br><em>(VLDB 2021)</em> -
+                    <a href="https://dl.acm.org/doi/10.14778/3476311.3476326" target="_blank">Paper</a>
+                </li>
+
+                <li><strong>CBench (Demo):</strong> Demonstrating Comprehensive Evaluation of QA Systems over Knowledge
+                    Graphs Through Deep Analysis
+                    <br><em><u>Abdelghny Orogat</u></em>, Ahmed El-Roby
+                    <br><em>(VLDB 2021)</em> -
+                    <a href="https://dl.acm.org/doi/10.14778/3476311.3476326" target="_blank">Paper</a>
+                    <a href="https://www.youtube.com/watch?v=QT-q53jPhMc" target="_blank">Demo Video</a>
+
+                </li>
+
+                <li><strong>Towards Next-Generation QA Over Knowledge Graphs:</strong> Accurate Benchmarking and
+                    Large-Scale Training
+                    <br><em><u>Abdelghny Orogat</u></em>
+                    <br><em>(Ontario Database Day 2023)</em>
+                    <a href="https://ondbd.ca/talk/talk13.pdf" target="_blank">Talk Paper</a>
+                    <a href="https://ondbd.ca/slide/1-3.pdf" target="_blank">Slides</a>
+
+                </li>
+
+                <li><strong>CBench:</strong> Towards Better Evaluation of QA Over Knowledge Graphs (Long Version)
+                    <br><em><u>Abdelghny Orogat</u></em>, Isabelle Liu, Ahmed El-Roby
+                    <br><em>(arXiv 2021)</em> -
+                    <a href="https://arxiv.org/abs/2104.05949" target="_blank">arXiv</a>
+                </li>
+
+                <li><strong>Web Page Segmentation Using Block Function Tree:</strong>
+                    <br><em><u>Abdelghny Orogat</u></em>, Hamed Hemeda
+                    <br><em>(IEEE IEMCON 2016)</em>
+                </li>
+
+                <li><strong>Webpages Adaptation Based on One-to-One Mapping:</strong>
+                    <br><em><u>Abdelghny Orogat</u></em>, Hamed Hemeda, MTF Saidahmed
+                    <br><em>(IEEE IEMCON 2016)</em>
                 </li>
             </ul>
         </section>
