@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://aorogat.github.io//sitemap.xml
