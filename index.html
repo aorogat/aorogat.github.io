@@ -1,570 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Abdelghny Orogat — Ph.D., Researcher & Knowledge Graph Specialist" />
-    <title>Abdelghny Orogat — Research Profile</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Abdelghny Orogat — Research Scientist</title>
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #34495e;
-            --text: #2c3e50;
-            --text-light: #7f8c8d;
-        }
-        
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.7; 
-            color: var(--text); 
-            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
-            min-height: 100vh;
-        }
-        
-        .navbar { 
-            width: 100%; 
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: #fff; 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            display: flex; 
-            justify-content: center; 
-            padding: 1rem; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-        
-        .navbar a { 
-            color: #fff; 
-            text-decoration: none; 
-            margin: 0 1rem; 
-            font-size: 0.95rem; 
-            padding: 0.5rem 1rem; 
-            border-radius: 6px; 
-            transition: all 0.3s ease; 
-            white-space: nowrap;
-            font-weight: 500;
-        }
-        
-        .navbar a:hover { 
-            background: rgba(255,255,255,0.2); 
-            transform: translateY(-2px);
-        }
-        
-        .container { 
-            margin-top: 100px; 
-            padding: 2.5rem; 
-            max-width: 1000px; 
-            margin-left: auto; 
-            margin-right: auto; 
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-            margin-bottom: 3rem;
-        }
-        
-        header { 
-            display: flex; 
-            align-items: center; 
-            margin-bottom: 3rem; 
-            padding-bottom: 2rem;
-            border-bottom: 3px solid #e9ecef;
-        }
-        
-        header img { 
-            width: 140px; 
-            height: 140px; 
-            border-radius: 50%; 
-            border: 4px solid var(--secondary); 
-            margin-right: 2rem;
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
-            object-fit: cover;
-        }
-        
-        .header-info h1 { 
-            font-size: 2.5em; 
-            color: var(--primary); 
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        
-        .header-info .subtitle {
-            font-size: 1.2em;
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-        
-        .contact-item { 
-            font-size: 0.95em; 
-            color: var(--text-light); 
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .icon {
-            font-size: 1.1em;
-        }
-        
-        .social-links {
-            margin-top: 1rem;
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .social-btn {
-            padding: 0.5rem 1rem;
-            background: var(--secondary);
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .social-btn:hover {
-            background: var(--primary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        
-        section { 
-            margin-bottom: 2.5rem;
-            animation: fadeIn 0.6s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        h2 { 
-            color: var(--primary); 
-            border-bottom: 3px solid var(--secondary); 
-            padding-bottom: 0.5rem; 
-            margin-bottom: 1.2rem;
-            font-size: 1.8em;
-            font-weight: 600;
-        }
-        
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .skill-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 1.5rem;
-            border-radius: 8px;
-            color: white;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        
-        .skill-card h3 {
-            font-size: 1.2em;
-            margin-bottom: 0.5rem;
-        }
-        
-        ul { 
-            list-style: none; 
-            padding-left: 0; 
-        }
-        
-        ul li { 
-            padding: 0.8rem 0; 
-            padding-left: 2rem;
-            position: relative;
-            transition: all 0.2s ease;
-        }
-        
-        ul li::before { 
-            content: "▸"; 
-            color: var(--secondary); 
-            font-weight: bold;
-            position: absolute;
-            left: 0.5rem;
-            font-size: 1.2em;
-        }
-        
-        ul li:hover {
-            background: #f8f9fa;
-            padding-left: 2.5rem;
-        }
-        
-        .experience-item, .education-item, .publication-item {
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid var(--secondary);
-            transition: all 0.3s ease;
-        }
-        
-        .experience-item:hover, .education-item:hover, .publication-item:hover {
-            background: #e9ecef;
-            border-left-color: var(--accent);
-            transform: translateX(5px);
-        }
-        
-        .item-title {
-            font-size: 1.2em;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .item-meta {
-            color: var(--text-light);
-            font-size: 0.9em;
-            margin-bottom: 0.8rem;
-        }
-        
-        .item-description {
-            color: var(--text);
-            line-height: 1.6;
-        }
-        
-        section#about p {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #555;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .stat-card {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            color: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            font-size: 1em;
-            opacity: 0.9;
-        }
-        
-        footer {
-            text-align: center; 
-            padding: 2rem 0; 
-            color: #95a5a6;
-            font-size: 0.9em;
-            margin-top: 3rem;
-        }
-        
-        a {
-            color: var(--secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--primary);
-            text-decoration: underline;
-        }
-        
-        strong {
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            header img {
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-            
-            .navbar {
-                flex-wrap: wrap;
-            }
-            
-            .navbar a {
-                margin: 0.3rem 0.5rem;
-            }
-            
-            .container {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;
+    background:#f4f6f8;color:#1c252d;line-height:1.62;font-size:15.8px;
+}
+
+/* Sidebar */
+.sidebar{
+    position:fixed;left:0;top:0;width:240px;height:100vh;
+    background:linear-gradient(180deg, #1e2a38 0%, #2d3e50 100%);
+    color:white;display:flex;flex-direction:column;
+    padding-top:2rem;box-shadow:3px 0 15px rgba(0,0,0,.18);
+    z-index:100;
+}
+.sidebar-header{text-align:center;padding:1.6rem 1rem;}
+.sidebar-header img{
+    width:130px;height:130px;border-radius:50%;
+    border:4px solid #5a9bd5;margin-bottom:.8rem;
+    box-shadow:0 4px 12px rgba(90, 155, 213, 0.4);
+    transition:transform 0.3s ease;
+}
+.sidebar-header img:hover{
+    transform:scale(1.05);
+}
+.sidebar-header h2{font-size:1.3rem;margin-bottom:.3rem;font-weight:600;letter-spacing:-0.3px;}
+.sidebar-header span{font-size:.84rem;color:#b8c5d3;line-height:1.4;}
+
+/* Nav links */
+.sidebar-nav{flex:1;padding:0 1rem;margin-top:.6rem;}
+.sidebar-nav a{
+    display:block;padding:.72rem .7rem;margin-bottom:.25rem;
+    text-decoration:none;color:#d6e1e9;font-size:.94rem;border-radius:5px;
+    transition:all 0.28s ease;font-weight:400;
+    border-left:3px solid transparent;
+}
+.sidebar-nav a:hover{
+    background:rgba(90, 155, 213, 0.2);
+    color:white;padding-left:1rem;
+    border-left-color:#5a9bd5;
+}
+.sidebar-nav a.active{
+    background:rgba(90, 155, 213, 0.25);
+    color:white;font-weight:500;
+    border-left-color:#5a9bd5;
+    padding-left:1rem;
+}
+
+/* Footer */
+.sidebar-footer{
+    text-align:center;padding:1.3rem 1rem;
+    border-top:1px solid rgba(255,255,255,.1);
+}
+.social-links{
+    display:flex;justify-content:center;gap:1rem;margin-bottom:.8rem;
+}
+.social-links a{
+    color:#b8c5d3;font-size:1.1rem;transition:color 0.3s ease;
+    text-decoration:none;
+}
+.social-links a:hover{color:#5a9bd5;}
+.sidebar-footer small{color:#8a9bad;font-size:.74rem;}
+
+/* Main Body */
+.main-content{margin-left:240px;}
+
+/* Hero */
+.hero-section{
+    background:linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+    padding:2.5rem 3.2rem;
+    border-bottom:1px solid #dbe2e6;
+    box-shadow:0 2px 8px rgba(0,0,0,0.04);
+}
+.hero-title{
+    font-size:2.8rem;font-weight:600;margin-bottom:.5rem;
+    color:#0f1c26;letter-spacing:-0.8px;
+}
+.hero-subtitle{
+    font-size:1.15rem;color:#2d5a7b;font-weight:500;
+    margin-bottom:.3rem;
+}
+.hero-affiliation{
+    font-size:.98rem;color:#5a6c7d;margin-bottom:1.5rem;
+}
+
+/* Contact box */
+.contact-box{
+    background:#f4f7fa;padding:1.1rem 1.5rem;border-radius:7px;
+    display:inline-block;border:1px solid #e3e8ec;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+.contact-box h3{
+    font-size:1.05rem;margin-bottom:.85rem;color:#1a2830;font-weight:600;
+}
+.contact-info{display:grid;gap:.5rem;}
+.contact-item{font-size:.91rem;color:#3a4a59;}
+.contact-item strong{color:#1a2830;min-width:85px;display:inline-block;}
+.contact-item a{color:#2e82da;text-decoration:none;transition:color 0.3s ease;}
+.contact-item a:hover{color:#1f5ca8;text-decoration:underline;}
+
+/* Section */
+.content-section{
+    background:white;
+    padding:2.5rem 3.2rem;
+    border-bottom:1px solid #e8ecef;
+}
+.content-section h2{
+    font-size:1.65rem;font-weight:600;margin-bottom:1rem;padding-bottom:.45rem;
+    border-bottom:2.5px solid #5a9bd5;color:#0f1c26;
+    display:inline-block;
+}
+.bio-text{
+    margin-top:1rem;line-height:1.75;color:#2a3844;
+    font-size:.97rem;
+}
+.bio-text b{color:#1a2830;font-weight:600;}
+.bio-text ul{
+    margin-left:1.5rem;margin-top:.7rem;
+}
+.bio-text ul li{
+    margin-bottom:.55rem;padding-left:.4rem;
+}
+
+/* Highlight boxes */
+.research-highlight{
+    margin:1.3rem 0;padding:1.1rem 1.4rem;border-radius:6px;
+    background:linear-gradient(135deg, #e8f4fc 0%, #f0f7fd 100%);
+    border-left:4px solid #3a80d9;
+    box-shadow:0 2px 6px rgba(58, 128, 217, 0.08);
+}
+.research-highlight b{font-weight:600;color:#1a2830;}
+
+/* Project cards */
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:1.2rem;margin-top:1.2rem;
+}
+.project-card{
+    background:#fafbfc;padding:1.4rem;border-radius:7px;
+    border:1px solid #dfe5ea;
+    transition:all 0.3s ease;
+    box-shadow:0 2px 4px rgba(0,0,0,0.04);
+}
+.project-card:hover{
+    border-color:#5a9bd5;
+    transform:translateY(-3px);
+    box-shadow:0 6px 16px rgba(0,0,0,0.1);
+}
+.project-card h3{
+    font-size:1.1rem;color:#1a2830;margin-bottom:.6rem;font-weight:600;
+}
+.project-card .meta{
+    font-size:.85rem;color:#6a7782;margin-bottom:.7rem;
+    font-style:italic;
+}
+.project-card p{
+    font-size:.92rem;line-height:1.6;color:#3a4a59;
+}
+
+/* Awards list */
+.awards-list{
+    margin-top:1rem;
+}
+.award-item{
+    padding:1rem 1.2rem;margin-bottom:.8rem;
+    background:#fafbfc;border-left:4px solid #5a9bd5;
+    border-radius:5px;
+    transition:all 0.3s ease;
+}
+.award-item:hover{
+    background:#f0f4f7;
+    transform:translateX(4px);
+}
+.award-item h4{
+    font-size:1.05rem;color:#1a2830;margin-bottom:.3rem;font-weight:600;
+}
+.award-item span{
+    font-size:.88rem;color:#5a6c7d;
+}
+
+/* Quick links */
+.quick-links{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1.1rem;margin-top:1.2rem;
+}
+.quick-link-card{
+    background:white;padding:1.3rem 1rem;border-radius:7px;
+    border:1px solid #dfe5ea;text-align:center;
+    text-decoration:none;color:#1f2a32;
+    transition:all 0.32s ease;
+    box-shadow:0 2px 4px rgba(0,0,0,0.04);
+}
+.quick-link-card:hover{
+    border-color:#3a80d9;
+    transform:translateY(-4px);
+    box-shadow:0 6px 16px rgba(58, 128, 217, 0.15);
+}
+.quick-link-card span{
+    font-size:2.2rem;display:block;margin-bottom:.6rem;
+}
+.quick-link-card h3{
+    font-size:1rem;color:#1a2830;font-weight:600;
+}
+
+/* Publications section */
+.pub-item{
+    padding:1.2rem;margin-bottom:1rem;
+    background:#fafbfc;border-radius:6px;
+    border-left:3px solid #5a9bd5;
+    transition:all 0.3s ease;
+}
+.pub-item:hover{
+    background:#f0f4f7;
+    transform:translateX(3px);
+}
+.pub-item h4{
+    font-size:1.05rem;color:#1a2830;margin-bottom:.5rem;
+    font-weight:600;line-height:1.5;
+}
+.pub-item .authors{
+    font-size:.88rem;color:#5a6c7d;margin-bottom:.4rem;
+}
+.pub-item .venue{
+    font-size:.9rem;color:#3a80d9;font-weight:500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar{
+        width:100%;height:auto;position:relative;
+    }
+    .main-content{margin-left:0;}
+    .hero-section, .content-section{padding:1.8rem 1.5rem;}
+    .hero-title{font-size:2.2rem;}
+}
+</style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="#about">About</a>
-        <a href="#research-interests">Research</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="container">
-        <header>
-            <img src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/refs/heads/main/img.jpg" alt="Profile photo" />
-            <div class="header-info">
-                <h1>Abdelghny Orogat</h1>
-                <div class="subtitle">Ph.D. in Computer Science | Knowledge Graph & NLP Researcher</div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="icon">📍</span>
-                        <span>Ottawa, Ontario, Canada</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">🎓</span>
-                        <span>Carleton University</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">✉️</span>
-                        <span>abdelghny.orogat@carleton.ca | aorogat@gmail.com</span>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://scholar.google.com.eg/citations?user=nqr78kwAAAAJ&hl=en" target="_blank" class="social-btn">
-                        <span>🎓</span> Google Scholar
-                    </a>
-                    <a href="https://github.com/aorogat" target="_blank" class="social-btn">
-                        <span>💻</span> GitHub
-                    </a>
-                </div>
-            </div>
-        </header>
-
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">4+</div>
-                <div class="stat-label">Years Research Experience</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">5+</div>
-                <div class="stat-label">Publications</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">1M+</div>
-                <div class="stat-label">Benchmark Dataset Size</div>
-            </div>
-        </div>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am a recent Ph.D. graduate from Carleton University specializing in Question Answering over Knowledge Graphs (QAKG). My research focuses on bridging the gap between natural language queries and structured knowledge through innovative benchmark creation and intelligent query systems. I have extensive experience in both academic research and industry applications, having worked at Ericsson on knowledge graph construction, data integration, and retrieval-augmented generation systems.
-            </p>
-            <p style="margin-top: 1rem;">
-                My work has contributed significantly to the field through the creation of large-scale benchmark datasets and automated evaluation systems for QAKG. I am passionate about making knowledge graphs more accessible through natural language interfaces and advancing the intersection of NLP and semantic technologies.
-            </p>
-        </section>
-
-        <section id="research-interests">
-            <h2>Research Interests</h2>
-            <div class="skill-grid">
-                <div class="skill-card">
-                    <h3>🔗 Knowledge Graphs</h3>
-                    <p>Construction, querying, and reasoning</p>
-                </div>
-                <div class="skill-card">
-                    <h3>💬 NLP</h3>
-                    <p>Natural language understanding & generation</p>
-                </div>
-                <div class="skill-card">
-                    <h3>🔍 Information Retrieval</h3>
-                    <p>Semantic search & RAG systems</p>
-                </div>
-                <div class="skill-card">
-                    <h3>🤖 Large Language Models</h3>
-                    <p>Integration with structured knowledge</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills & Expertise</h2>
-            <ul>
-                <li><strong>Knowledge Graphs:</strong> RDF, SPARQL, OWL, Graph Databases (Neo4j), Knowledge Graph Construction & Integration</li>
-                <li><strong>Programming Languages:</strong> Python, SQL, Java, JavaScript</li>
-                <li><strong>NLP & ML:</strong> Transformers, BERT, GPT, PyTorch, TensorFlow, Hugging Face, LangChain</li>
-                <li><strong>Data Technologies:</strong> PostgreSQL, MongoDB, Elasticsearch, Apache Jena, Virtuoso</li>
-                <li><strong>Development Tools:</strong> Git, Docker, AWS, REST APIs, Flask, Django</li>
-                <li><strong>Research Methods:</strong> Benchmark Design, Dataset Creation, Experimental Evaluation, Academic Writing</li>
-            </ul>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-            
-            <div class="education-item">
-                <div class="item-title">Ph.D. in Computer Science</div>
-                <div class="item-meta">Carleton University, Ottawa, Canada | 2020–2024</div>
-                <div class="item-description">
-                    Dissertation: Question Answering over Knowledge Graphs - Benchmark Creation and System Development<br>
-                    <strong>Key Contributions:</strong> Created QueryBridge dataset (1M+ annotated questions), developed Maestro benchmarking system, advanced QAKG evaluation methodologies
-                </div>
-            </div>
-
-            <div class="education-item">
-                <div class="item-title">M.Sc. in Computer Engineering</div>
-                <div class="item-meta">Tanta University, Egypt | 2013–2017</div>
-                <div class="item-description">
-                    Focus: Data Mining, Machine Learning, and Information Systems
-                </div>
-            </div>
-
-            <div class="education-item">
-                <div class="item-title">B.Sc. in Computer Engineering</div>
-                <div class="item-meta">Tanta University, Egypt | 2011</div>
-                <div class="item-description">
-                    Foundation in computer science, algorithms, and software engineering
-                </div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2>Professional Experience</h2>
-            
-            <div class="experience-item">
-                <div class="item-title">Knowledge Graphs & RAG Engineer</div>
-                <div class="item-meta">Ericsson, Ottawa, Canada | 2023–2024</div>
-                <div class="item-description">
-                    Developed and deployed enterprise-scale knowledge graph systems for data integration and retrieval-augmented generation. Led the design of semantic search solutions and implemented graph-based analytics for diverse data sources. Collaborated with cross-functional teams to integrate knowledge graphs into production environments.
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="item-title">Research Assistant / PhD Candidate</div>
-                <div class="item-meta">Carleton University, Ottawa, Canada | 2020–2024</div>
-                <div class="item-description">
-                    Conducted cutting-edge research in QAKG, creating comprehensive benchmark datasets and evaluation frameworks. Developed NLQ-to-SPARQL translation systems and conducted extensive experimental evaluations. Published multiple papers in top-tier venues including SIGMOD, VLDB, and CIKM.
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="item-title">Contract Instructor (Lecturer)</div>
-                <div class="item-meta">Carleton University, School of Computer Science | 2022–Present</div>
-                <div class="item-description">
-                    Teaching database systems, SQL, data modeling, and information management courses. Developed curriculum materials, designed assignments and exams, and mentored undergraduate students in database design and implementation.
-                </div>
-            </div>
-        </section>
-
-        <section id="publications">
-            <h2>Selected Publications</h2>
-            
-            <div class="publication-item">
-                <div class="item-title">Ericsogate: Advancing Analytics and Management of Data from Diverse Sources within Ericsson Using Knowledge Graphs</div>
-                <div class="item-meta">A. Orogat, S. L. Vadlamani, D. Thomas, A. El-Roby | CIKM 2024</div>
-                <div class="item-description">
-                    Industry application demonstrating enterprise-scale knowledge graph deployment for heterogeneous data integration and analytics.
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <div class="item-title">QueryBridge: One Million Annotated Questions with SPARQL Queries — Dataset for QA over KGs</div>
-                <div class="item-meta">A. Orogat, A. El-Roby | 2024</div>
-                <div class="item-description">
-                    Large-scale benchmark dataset containing over one million natural language questions paired with corresponding SPARQL queries, enabling comprehensive training and evaluation of QAKG systems.
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <div class="item-title">Maestro: Automatic Generation of Comprehensive Benchmarks for QA over Knowledge Graphs</div>
-                <div class="item-meta">A. Orogat, A. El-Roby | SIGMOD 2023</div>
-                <div class="item-description">
-                    Novel framework for automatically generating diverse and comprehensive benchmarks for evaluating QAKG systems, addressing the challenge of limited and biased evaluation datasets.
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <div class="item-title">Towards Next-Generation QA Over Knowledge Graphs Systems via Accurate Benchmarking and Large-Scale Training</div>
-                <div class="item-meta">A. Orogat | Ontario Database Day 2023</div>
-                <div class="item-description">
-                    Vision paper outlining future directions for QAKG research, emphasizing the importance of rigorous benchmarking and large-scale training data.
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <div class="item-title">SmartBench: Demonstrating Automatic Generation of Comprehensive Benchmarks for QA over Knowledge Graphs</div>
-                <div class="item-meta">A. Orogat, A. El-Roby | VLDB 2022</div>
-                <div class="item-description">
-                    Interactive demonstration of automated benchmark generation system for QAKG evaluation.
-                </div>
-            </div>
-
-            <p style="margin-top: 2rem;">
-                <a href="https://scholar.google.com.eg/citations?user=nqr78kwAAAAJ&hl=en" target="_blank" style="font-size: 1.1em; font-weight: 600;">
-                    📚 View Complete Publication List on Google Scholar →
-                </a>
-            </p>
-        </section>
-
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>
-                I'm always interested in discussing research collaborations, speaking opportunities, or consulting projects related to knowledge graphs, NLP, and semantic technologies. Feel free to reach out via email or connect with me on professional networks.
-            </p>
-            <div class="social-links" style="margin-top: 1.5rem;">
-                <a href="mailto:abdelghny.orogat@carleton.ca" class="social-btn">
-                    <span>✉️</span> Email Me
-                </a>
-                <a href="https://scholar.google.com.eg/citations?user=nqr78kwAAAAJ&hl=en" target="_blank" class="social-btn">
-                    <span>🎓</span> Google Scholar
-                </a>
-                <a href="https://github.com/aorogat" target="_blank" class="social-btn">
-                    <span>💻</span> GitHub
-                </a>
-            </div>
-        </section>
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <img src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/refs/heads/main/img.jpg" alt="Abdelghny Orogat"/>
+        <h2>Abdelghny Orogat</h2>
+        <span>Postdoctoral Researcher<br>Concordia University</span>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Abdelghny Orogat. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85em;">Last updated: November 2025</p>
-    </footer>
+    <nav class="sidebar-nav">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#awards">Awards & Grants</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#cv">CV</a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <small>© 2025 · Abdelghny Orogat</small>
+    </div>
+</aside>
+
+<!-- Main Content -->
+<main class="main-content">
+    <section class="hero-section">
+        <h1 class="hero-title">Abdelghny Orogat</h1>
+        <p class="hero-subtitle">Postdoctoral Fellow — Concordia University</p>
+        <p class="hero-affiliation">Ph.D., Computer Science — Carleton University</p>
+        
+        <div class="contact-box">
+            <h3>Contact</h3>
+            <div class="contact-info">
+                <div class="contact-item"><strong>Email:</strong> <a href="mailto:abdelghny.orogat@carleton.ca">abdelghny.orogat@carleton.ca</a></div>
+                <div class="contact-item"><strong>Alternate:</strong> <a href="mailto:abdelghny.orogat@concordia.ca">abdelghny.orogat@concordia.ca</a></div>
+                <div class="contact-item"><strong>Location:</strong> Ottawa, Ontario, Canada</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="content-section">
+        <h2>Overview</h2>
+        <p class="bio-text">
+            I am a postdoctoral researcher at <b>Concordia University</b> working with <b><a href="http://emansour.com/">Prof. Essam Mansour</a></b> on multi-agent systems,
+            memory-augmented LLM architectures, and knowledge-rich reasoning. I completed my Ph.D. under 
+            <b>Prof. Ahmed El-Roby</b> at Carleton University, where my research focused on Question Answering over Knowledge Graphs (QAKG),
+            benchmark generation, and scalable data-centric AI systems.
+        </p>
+        <p class="bio-text">
+            My work sits at the intersection of <b>large language models, multi-agent intelligence, knowledge graphs, and natural 
+            language interfaces to structured data</b>. I have built and deployed production systems, created large-scale datasets, 
+            and published research in top-tier venues including SIGMOD, VLDB, and CIKM. My industry experience includes designing 
+            knowledge graph systems at <b>Ericsson</b>, where I developed enterprise-scale semantic search and RAG-augmented 
+            analytics platforms.
+        </p>
+        
+        <div class="research-highlight">
+            <b>Research Interests:</b> Multi-Agent Systems • Knowledge Graphs • Large Language Models • Semantic Parsing • 
+            Question Answering over Structured Data • Memory-Augmented Reasoning • Retrieval-Augmented Generation
+        </div>
+    </section>
+
+<section id="research" class="content-section">
+    <h2>Current Research</h2>
+    <p class="bio-text">
+        My ongoing research explores <b>multi-agent LLM architectures</b> capable of coordinated reasoning, tool execution,
+        memory retention, and scalable decision-making. I aim to develop foundational methods for agent cognition,
+        communication, and planning over large structured knowledge sources.
+    </p>
+
+    <div class="project-grid">
+        <div class="project-card">
+    <h3>📊 Multi-Agent Framework Evaluation</h3>
+    <div class="meta">2025–Present</div>
+    <p>
+        A systematic study comparing LangGraph, CrewAI, AutoGen and Concordia frameworks — evaluating memory models,
+        network topology, coordination overhead, planning ability, and scalability limits. This work addresses the
+        lack of comparative understanding in the agent framework ecosystem.
+    </p>
+</div>
+
+
+        <div class="project-card">
+            <h3>🧠 Adaptive Agentic Systems</h3>
+            <div class="meta">Research Agenda</div>
+            <p>
+                Toward new multi-agent architectures featuring persistent memory, reflective planning, long-horizon reasoning,
+                and adaptive task routing. Positioning agent intelligence beyond response generation — toward autonomy,
+                verification, and controlled behaviour under uncertainty.
+            </p>
+        </div>
+    </div>
+
+    <h2 style="margin-top:2.8rem;">Previous Work</h2>
+    <p class="bio-text">Prior contributions include large-scale datasets, automated benchmarking platforms, and deployed knowledge-graph systems:</p>
+
+    <ul class="bio-text" style="margin-top:1rem;">
+        <li><b>Chatty-KG (SIGMOD 2026)</b> — Multi-agent question-answering over knowledge graphs using LangGraph with specialised retrieval / planning / validation agents.</li>
+        <li><b>QueryBridge (CIKM 2025)</b> — 1M+ SPARQL-language pairs; the largest open NLQ-to-KG benchmark.</li>
+        <li><b>Maestro (SIGMOD 2023, VLDB 2022)</b> — Automatic benchmark generation for QAKG; addresses evaluation bias and coverage limits.</li>
+        <li><b>CBench (VLDB 2021)</b> — Full-stack evaluation suite for KG-QA; standardized metrics & reproducible experimental pipeline.</li>
+        <li><b>Ericsogate (CIKM 2024)</b> — Production-grade KG analytics platform at Ericsson with semantic search, summarization, and RAG-augmented exploration.</li>
+    </ul>
+
+    <div class="research-highlight" style="margin-top:1.6rem;">
+        My long-term goal is to build <b>memory-aware, scalable intelligent agent systems</b> capable of reasoning over structured knowledge,
+        coordinating collectively, and autonomously planning across complex tasks.
+    </div>
+</section>
+
+
+<section id="awards" class="content-section">
+    <h2>Awards & Funding</h2>
+
+    <ul class="bio-text" style="margin-top:1rem;">
+        <li><b>NSERC CREATE Postdoctoral Award</b> — 2025</li>
+        <li><b>Mitacs Industrial Fellowship</b> (Ericsson, 12 months)</li>
+        <li><b>SIGMOD Travel Award</b> — 2023</li>
+    </ul>
+</section>
+
+
+<section id="teaching" class="content-section">
+    <h2>Teaching</h2>
+
+    <ul class="bio-text" style="margin-top:1rem;">
+        <li><b>Contract Instructor — Carleton University (2022–Present)</b></li>
+        <ul style="margin-top:.4rem;">
+            <li>Instructor for <b>COMP 3005 — Database Systems</b></li>
+            <li>Terms taught: Fall 2022, Fall 2023, Winter 2024, Fall 2025</li>
+            <li><b>Winter 2026 (scheduled)</b> — Master/upper-year offering with expanded modules in:</li>
+            <ul style="margin-top:.35rem;">
+                <li>Advanced Query Optimization & Execution Plans</li>
+                <li>Distributed and Parallel Databases</li>
+                <li>Modern NoSQL & Graph Databases (Neo4j, RDF Stores)</li>
+                <li>Indexing for Large-Scale Retrieval Workloads</li>
+            </ul>
+            <li>Topics: SQL, ER modeling, normalization, ACID, NoSQL, Neo4j, MongoDB, indexing, optimization</li>
+            <li>Delivered through <b>Brightspace</b> LMS (slides, labs, assignments, auto-grading)  
+                <a href="https://brightspace.carleton.ca" target="_blank" style="color:#2575d6;font-weight:600;">Access Brightspace ↗</a>
+            </li>
+        </ul>
+    </ul>
+</section>
+
+
+
+</main>
 
 </body>
 </html>
