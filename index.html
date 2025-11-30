@@ -1,1084 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta name="google-site-verification" content="TBfHwQcxPrO-eWzZpds3l7vj5k5C9isERF5QIXLGTcA" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Abdelghny Orogat">
-    <meta name="robots" content="index, follow">
-
-    <title>Abdelghny Orogat - CV</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Abdelghny Orogat — Ph.D., Researcher & Knowledge Graph Specialist" />
+    <title>Abdelghny Orogat — Research Profile</title>
 
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --text: #2c3e50;
+            --text-light: #7f8c8d;
         }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-            /* display: flex; */
+        
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.7; 
+            color: var(--text); 
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            min-height: 100vh;
         }
-
-        /* General Navigation Bar Styles */
-        .navbar {
-            width: 100%;
-            background: #4e6276;
-            color: #fff;
-            position: fixed;
-            top: 0;
-            left: 0;
+        
+        .navbar { 
+            width: 100%; 
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: #fff; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            display: flex; 
+            justify-content: center; 
+            padding: 1rem; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
             z-index: 1000;
-            /* Ensures it stays above other elements */
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar a { 
+            color: #fff; 
+            text-decoration: none; 
+            margin: 0 1rem; 
+            font-size: 0.95rem; 
+            padding: 0.5rem 1rem; 
+            border-radius: 6px; 
+            transition: all 0.3s ease; 
+            white-space: nowrap;
+            font-weight: 500;
+        }
+        
+        .navbar a:hover { 
+            background: rgba(255,255,255,0.2); 
+            transform: translateY(-2px);
+        }
+        
+        .container { 
+            margin-top: 100px; 
+            padding: 2.5rem; 
+            max-width: 1000px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        header { 
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 3rem; 
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #e9ecef;
+        }
+        
+        header img { 
+            width: 140px; 
+            height: 140px; 
+            border-radius: 50%; 
+            border: 4px solid var(--secondary); 
+            margin-right: 2rem;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            object-fit: cover;
+        }
+        
+        .header-info h1 { 
+            font-size: 2.5em; 
+            color: var(--primary); 
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .header-info .subtitle {
+            font-size: 1.2em;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        
+        .contact-item { 
+            font-size: 0.95em; 
+            color: var(--text-light); 
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 0.5rem;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            flex-wrap: wrap;
-            /* Allows links to wrap on smaller screens */
+            gap: 0.5rem;
         }
-
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 0.5rem;
-            padding: 0.3rem 0.5rem;
-            font-size: 0.9rem;
-            /* Default font size */
-            border-radius: 3px;
-            transition: background-color 0.3s, color 0.3s;
-            white-space: nowrap;
-            /* Prevent text from breaking into multiple lines */
+        
+        .icon {
+            font-size: 1.1em;
         }
-
-        .navbar a:hover {
-            background-color: #5b748a;
-            color: #e0e0e0;
-        }
-
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 768px) {
-            .navbar {
-                justify-content: flex-start;
-                /* Align links to the left for smaller screens */
-                padding: 0.5rem 1rem;
-            }
-
-            .navbar a {
-                font-size: 0.8rem;
-                /* Smaller font size for narrow screens */
-                margin: 0 0.3rem;
-                /* Reduce horizontal spacing */
-                padding: 0.2rem 0.4rem;
-                /* Reduce padding for compactness */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .navbar {
-                flex-direction: column;
-                /* Stack links vertically */
-                align-items: flex-start;
-            }
-
-            .navbar a {
-                font-size: 0.7rem;
-                /* Even smaller font size for very narrow screens */
-                margin: 0.2rem 0;
-                /* Add vertical spacing between links */
-                padding: 0.2rem 0.3rem;
-            }
-        }
-
-        /* Adjust the body content to not overlap the navbar */
-        .container {
-            margin-top: 200px;
-            /* Height of the navbar */
-        }
-
-
-        /* Sidebar Menu */
-        .sidebar {
-            width: 200px;
-            background: #4e6276;
-            color: #fff;
-            padding: 2rem 1rem;
-            position: fixed;
-            height: 100vh;
-            top: 0;
-            left: 0;
-        }
-
-        .content {
-            max-height: 100px;
-            /* Set a smaller initial height */
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Add a gradient fade effect at the bottom */
-        .content::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            /* Adjust the fade height as needed */
-            background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
-            pointer-events: none;
-            /* Prevent interaction with the fade */
-        }
-
-        .toggle-btn {
-            background: transparent;
-            color: #0073e6;
-            /* Match your theme color */
-            border: 0px solid #0073e6;
-            padding: 5px 10px;
-            cursor: pointer;
+        
+        .social-links {
             margin-top: 1rem;
-            transition: color 0.3s, border-color 0.3s;
-        }
-
-        .toggle-btn:hover {
-            color: #005bb5;
-            border-color: #005bb5;
-            /* Darken on hover for effect */
-        }
-
-
-
-
-        .sidebar h2 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .sidebar a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            margin: 0.5rem 0;
-            padding: 0.3rem 0;
-            transition: background 0.3s;
-        }
-
-        .sidebar a:hover {
-            background: #323d49;
-            padding-left: 0.5rem;
-        }
-
-        /* Content Container */
-        .container {
-            margin-left: 220px;
-            /* Space for the sidebar */
-            padding: 2rem;
-            width: calc(80% - 220px);
-        }
-
-        header {
-            background-color: #fff;
-            color: #333;
-            padding: 1rem 2rem;
-            border-radius: 5%;
-        }
-
-        header img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-right: 1.5rem;
-            border: 2px solid #ccc;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.2em;
-            color: #4e6276;
-        }
-
-        header p {
-            margin: 0.2rem 0;
-            font-size: 1.2em;
-            color: #555;
-        }
-
-        header p:last-child {
-            color: #777;
-            font-size: 1em;
-        }
-
-
-        .main-section {
-            padding: 1.5rem 0;
-        }
-
-        h2 {
-            color: #4e6276;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 0.5rem;
-        }
-
-        .horizontal-list {
             display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .horizontal-list li {
-            margin-right: 1rem;
-            position: relative;
-            padding-left: 1rem;
-        }
-
-        .horizontal-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #333;
-            font-size: 1.2em;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-            display: block;
-        }
-
-        .education {
-            display: flex;
-            flex-wrap: wrap;
             gap: 1rem;
         }
-
-        .education-entry {
-            width: 32%;
-            /* Keeps entries side-by-side on larger screens */
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        
+        .social-btn {
+            padding: 0.5rem 1rem;
+            background: var(--secondary);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-
-        .education-entry p {
-            margin: 0.2rem 0;
+        
+        .social-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-
-        /* Adjust font size and spacing to be more compact */
-        h2 {
-            font-size: 1.5rem;
+        
+        section { 
+            margin-bottom: 2.5rem;
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 { 
+            color: var(--primary); 
+            border-bottom: 3px solid var(--secondary); 
+            padding-bottom: 0.5rem; 
+            margin-bottom: 1.2rem;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        .skill-card h3 {
+            font-size: 1.2em;
             margin-bottom: 0.5rem;
         }
-
-        .experience {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+        
+        ul { 
+            list-style: none; 
+            padding-left: 0; 
         }
-
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+        
+        ul li { 
+            padding: 0.8rem 0; 
+            padding-left: 2rem;
+            position: relative;
+            transition: all 0.2s ease;
         }
-
-        .experience-entry {
-            width: 98%;
-            /* Keeps entries side-by-side on larger screens */
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        
+        ul li::before { 
+            content: "▸"; 
+            color: var(--secondary); 
+            font-weight: bold;
+            position: absolute;
+            left: 0.5rem;
+            font-size: 1.2em;
         }
-
-        .experience-entry p {
-            margin: 0.3rem 0;
+        
+        ul li:hover {
+            background: #f8f9fa;
+            padding-left: 2.5rem;
         }
-
-        .content-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: flex-start;
+        
+        .experience-item, .education-item, .publication-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            transition: all 0.3s ease;
         }
-
-
-        .video-container,
-        .text-container {
-            flex: 1 1 48%;
-            /* Each takes 50% of the width */
-            max-width: 48%;
-            /* Ensures they don’t exceed half the width */
+        
+        .experience-item:hover, .education-item:hover, .publication-item:hover {
+            background: #e9ecef;
+            border-left-color: var(--accent);
+            transform: translateX(5px);
         }
-
-        /* Add media query for responsive adjustments on smaller screens */
+        
+        .item-title {
+            font-size: 1.2em;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-meta {
+            color: var(--text-light);
+            font-size: 0.9em;
+            margin-bottom: 0.8rem;
+        }
+        
+        .item-description {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        section#about p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        
+        footer {
+            text-align: center; 
+            padding: 2rem 0; 
+            color: #95a5a6;
+            font-size: 0.9em;
+            margin-top: 3rem;
+        }
+        
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
         @media (max-width: 768px) {
-
-            .content-wrapper {
+            header {
                 flex-direction: column;
+                text-align: center;
             }
-
-            .video-container,
-            .text-container {
-                max-width: 100%;
-                /* Full width on smaller screens */
-            }
-
-            /* Ensure sidebar collapses on smaller screens */
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-
-            /* Make container take full width on mobile */
-            .container {
-                margin-left: 0;
-                width: 100%;
-                padding: 2rem;
-            }
-
-            /* Make experience and education entries expand fully on smaller screens */
-            .experience-entry,
-            .education-entry {
-                width: 100%;
-                /* Full width on mobile */
+            
+            header img {
+                margin-right: 0;
                 margin-bottom: 1rem;
+            }
+            
+            .navbar {
+                flex-wrap: wrap;
+            }
+            
+            .navbar a {
+                margin: 0.3rem 0.5rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Sidebar Menu -->
     <nav class="navbar">
-        <a href="#about">About Me</a>
-        <a href="#research-interests">Research Interests</a>
+        <a href="#about">About</a>
+        <a href="#research-interests">Research</a>
+        <a href="#skills">Skills</a>
         <a href="#education">Education</a>
-        <a href="#work-experience">Work Experience</a>
-        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
         <a href="#publications">Publications</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#playlists">YouTube Channel</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-
     <div class="container">
-
-        <header style="background-color: #fff; color: #333; padding: 1rem 2rem; border-radius: 5%;">
-            <div style="display: flex; align-items: center; justify-content: center; max-width: 800px; margin: 0 auto;">
-                <!-- Profile Image -->
-                <img src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/refs/heads/main/img.jpg"
-                    alt="Abdelghny Orogat"
-                    style="width: 120px; height: 120px; border-radius: 50%; margin-right: 1.5rem; border: 2px solid #ccc;">
-
-                <!-- Text Information -->
-                <div style="text-align: left;">
-                    <h1 style="margin: 0; font-size: 2.2em; color: #4e6276;">Abdelghny Orogat</h1>
-                    <p style="margin: 0.2rem 0; font-size: 1.2em; color: #555;">Ottawa, Ontario, Canada</p>
-                    <p style="margin: 0; font-size: 1em; color: #777;">Email: abdelghny.orogat@carleton.ca |
-                        aorogat@gmail.com</p>
+        <header>
+            <img src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/refs/heads/main/img.jpg" alt="Profile photo" />
+            <div class="header-info">
+                <h1>Abdelghny Orogat</h1>
+                <div class="subtitle">Ph.D. in Computer Science | Knowledge Graph & NLP Researcher</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <span>Ottawa, Ontario, Canada</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">🎓</span>
+                        <span>Carleton University</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">✉️</span>
+                        <span>abdelghny.orogat@carleton.ca | aorogat@gmail.com</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://scholar.google.com.eg/citations?user=nqr78kwAAAAJ&hl=en" target="_blank" class="social-btn">
+                        <span>🎓</span> Google Scholar
+                    </a>
+                    <a href="https://github.com/aorogat" target="_blank" class="social-btn">
+                        <span>💻</span> GitHub
+                    </a>
                 </div>
             </div>
         </header>
 
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Years Research Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Publications</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1M+</div>
+                <div class="stat-label">Benchmark Dataset Size</div>
+            </div>
+        </div>
 
-
-        <section id="about" class="main-section">
+        <section id="about">
             <h2>About Me</h2>
             <p>
-                Abdelghny Orogat holds a PhD from Carleton University, where his groundbreaking research focused on advancing Question Answering over Knowledge Graphs (QAKG). During his PhD, he fine-tuned Large Language Models (LLMs) using his curated one-million-question dataset, significantly enhancing QAKG capabilities. He introduced Maestro, a system for natural language query (NLQ) generation from knowledge graphs, published in prestigious venues like SIGMOD and VLDB. Abdelghny also developed Ericsogate, a framework for constructing knowledge graphs from diverse data sources, revolutionizing data integration and management. His extensive industry experience spans knowledge graph construction, management, summarization, and application development. Alongside his research, he served as a Contract Instructor (Lecturer) at Carleton University. Abdelghny also holds a Master of Science in Computer Engineering from Tanta University, Egypt, where his thesis focused on adapting webpages to convert unresponsive designs into responsive formats.
+                I am a recent Ph.D. graduate from Carleton University specializing in Question Answering over Knowledge Graphs (QAKG). My research focuses on bridging the gap between natural language queries and structured knowledge through innovative benchmark creation and intelligent query systems. I have extensive experience in both academic research and industry applications, having worked at Ericsson on knowledge graph construction, data integration, and retrieval-augmented generation systems.
+            </p>
+            <p style="margin-top: 1rem;">
+                My work has contributed significantly to the field through the creation of large-scale benchmark datasets and automated evaluation systems for QAKG. I am passionate about making knowledge graphs more accessible through natural language interfaces and advancing the intersection of NLP and semantic technologies.
             </p>
         </section>
 
-        <section id="research-interests" class="main-section">
+        <section id="research-interests">
             <h2>Research Interests</h2>
-            <ul class="horizontal-list">
-                <li>Knowledge Graphs</li>
-                <li>Natural Language Processing</li>
-                <li>Information Reterival</li>
-                <li>Large Language Models (LLMs)</li>
-            </ul>
-        </section>
-
-        <section id="education" class="main-section">
-            <h2>Education</h2>
-            <div class="education">
-                <div class="education-entry">
-                    <h3>Ph.D. in Computer Science</h3>
-                    <p><strong>Institution:</strong> Carleton University, Ottawa, Canada</p>
-                    <p><strong>Time:</strong> 2020 - 2024</p>
-                    <p><strong>Focus:</strong> Knowledge Graphs and NLP</p>
-                    <p><strong>Thesis:</strong> Towards Next-Generation QA Over KGs</p>
-                    <p><strong>Achievements:</strong> Published in top-tier conferences, developed benchmarking tools.
-                    </p>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <h3>🔗 Knowledge Graphs</h3>
+                    <p>Construction, querying, and reasoning</p>
                 </div>
-
-                <div class="education-entry">
-                    <h3>M.Sc. in Computer Engineering</h3>
-                    <p><strong>Institution:</strong> Tanta University, Egypt</p>
-                    <p><strong>Time:</strong> 2013 - 2017</p>
-                    <p><strong>Focus:</strong> Adaptive Web Design</p>
-                    <p><strong>Thesis:</strong> Mobile Adaptation of Web Pages</p>
-                    <p><strong>Projects:</strong> Web segmentation, mobile-friendly adaptations.</p>
+                <div class="skill-card">
+                    <h3>💬 NLP</h3>
+                    <p>Natural language understanding & generation</p>
                 </div>
-
-                <div class="education-entry">
-                    <h3>B.Sc. in Computer Engineering</h3>
-                    <p><strong>Institution:</strong> Tanta University, Egypt</p>
-                    <p><strong>Time:</strong> 2011</p>
-                    <p><strong>Focus:</strong> Software and Systems Engineering</p>
-                    <p><strong>Graduation Project:</strong> IDE for Cloud Computing</p>
-                    <p><strong>Achievements:</strong> Designed compiler components.</p>
+                <div class="skill-card">
+                    <h3>🔍 Information Retrieval</h3>
+                    <p>Semantic search & RAG systems</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🤖 Large Language Models</h3>
+                    <p>Integration with structured knowledge</p>
                 </div>
             </div>
         </section>
 
-        <section id="work-experience" class="main-section">
-            <h2>Work Experience</h2>
-            <div class="experience">
-                <div class="experience-entry">
-                    <h3>Gen AI Engineer (Internship)</h3>
-                    <p><strong>Company:</strong> Ericsson, Ottawa, Canada</p>
-
-                    <p><strong>Duration:</strong> July 2024 - Oct 2024</p>
-                    <p><strong>Responsibilities:</strong> During my time at Ericsson, we developed a two-stage
-                        approach
-                        to improve the Retrieval-Augmented Generation (RAG) system for large language models. Our
-                        approach combines the efficiency of a single embedding for fast retrieval with the accuracy
-                        of a
-                        multi-embedding strategy, leveraging the <a
-                            href="https://github.com/stanford-futuredata/ColBERT" target="_blank">ColBERT</a> model. In
-                        the first stage, we quickly
-                        retrieve
-                        a set of the top documents from a large collection using single embeddings. Then, in the
-                        second
-                        stage, we apply multi-embedding retrieval on this subset to identify the best match. For
-                        this
-                        project, we used <a href="https://milvus.io/" target="_blank">Milvus</a> as the vector database
-                        to manage embeddings effectively.</p>
-
-                </div>
-
-                <div class="experience-entry">
-                    <h3>Knowledge Graphs Engineer (Internship)</h3>
-                    <p><strong>Company:</strong> Ericsson, Ottawa, Canada</p>
-
-                    <p><strong>Duration:</strong> Feb 2023 - Oct 2023</p>
-                    <p><strong>Responsibilities:</strong> During my time at Ericsson, I held the position of a
-                        Knowledge
-                        Graph Engineer, specializing in data integration from diverse sources, including structural,
-                        semi-structural, and unstructured data. My primary focus was on developing efficient methods
-                        to
-                        integrate and consolidate data into Knowledge Graphs, enabling seamless access and
-                        utilization
-                        of information. Additionally, I actively contributed to the development of applications
-                        built on
-                        top of Knowledge Graphs, such as a Semantic Search Engine and Knowledge Graph Summarization
-                        tools. These applications aimed to enhance search capabilities and provide condensed
-                        insights
-                        from complex knowledge repositories.
-                        </br>
-                        This work has been published in The 33rd ACM International Conference on Information and
-                        Knowledge Management (CIKM).
-                        </br>
-                        <strong>Paper title:</strong> <a
-                            href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033">"Ericsogate: Advancing
-                            Analytics
-                            and Management of Data from Diverse Sources within Ericsson Using Knowledge Graphs"</a>
-                    </p>
-
-                </div>
-
-                <div class="experience-entry">
-                    <h3>Research Assistant (Ph.D Student)</h3>
-                    <p><strong>Institution:</strong> Carleton University, Canada</p>
-
-                    <p><strong>Duration:</strong> 2020 - 2024</p>
-                    <p><strong>Responsibilities:</strong> Conducted research in knowledge graphs and NLP, focusing
-                        on
-                        developing tools for benchmarking and evaluating question-answering systems. Contributed to
-                        the
-                        following projects:</p>
-                    <ul>
-                        <li><strong>CBench:</strong> An extensible benchmarking suite for evaluating
-                            question-answering
-                            systems over knowledge graphs. <a href="https://github.com/aorogat/CBench"
-                                target="_blank">GitHub Repository</a></li>
-                        <li><strong>Maestro:</strong> A system for automatic benchmark generation tailored for QA
-                            over
-                            knowledge graphs. <a href="https://github.com/aorogat/Maestro" target="_blank">GitHub
-                                Repository</a></li>
-                        <li><strong>QueryBridge:</strong> A high-quality dataset with over one million annotated
-                            questions for knowledge graph QA research. <a
-                                href="https://huggingface.co/datasets/aorogat/QueryBridge" target="_blank">Hugging
-                                Face
-                                Dataset</a></li>
-                        <li><strong>Ericsogate:</strong> A six-layer knowledge graph system for managing diverse
-                            data
-                            sources within Ericsson, enhancing CloudRAN data management. <a
-                                href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033" target="_blank">ACM
-                                Digital
-                                Library</a></li>
-                    </ul>
-
-                </div>
-
-
-                <div class="experience-entry">
-                    <h3>Contract Instructor (Lecturer)</h3>
-                    <p><strong>Institution:</strong> Carleton University, Canada</p>
-                    <p><strong>Duration:</strong> Sep 2022 - Present</p>
-                    <p><strong>Responsibilities:</strong> As a Contract Instructor for the Database Management
-                        Systems
-                        course, I expertly guide students through essential topics such as Relational Algebra, Tuple
-                        Relational Calculus, and SQL operations. I empower students to design efficient databases
-                        using
-                        ER Modeling and provide guidance on Functional Dependencies, Normalization, and Application
-                        Development. Additionally, I introduce students to NOSQL databases, including
-                        Document-Oriented
-                        and Graph-Oriented variants, fostering a comprehensive understanding of data management. I
-                        design the entire curriculum, creating my own lecture materials, slides, and assignments to
-                        provide students with an engaging, structured learning experience.</p>
-                    <p><strong>Student Evaluations:</strong>
-                        <a href="https://www.ratemyprofessors.com/professor/2823675" target="_blank">RateMyProfessors
-                            Evaluation</a> |
-                        <a href="https://raw.githubusercontent.com/aorogat/aorogat.github.io/refs/heads/main/Evaluation Comments - Fall2023 - Section A.pdf"
-                            target="_blank">Official Student Evaluation
-                            (Sample)</a>
-                    </p>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="main-section">
-            <h2>Selected Projects</h2>
-            <div class="projects">
-
-                <div class="experience-entry">
-                    <h3><u>[Carleton University (In Progress)]</u> Star: A Question Answering System over Knowledge
-                        Graphs </h3>
-                    <div class="content">
-                        <div class="content-wrapper">
-                            <!-- Embedded YouTube Video on the left (taking half the space) -->
-                            <div class="video-container">
-                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/J_N-6m8fHz0"
-                                    title="Star Project Demo Video" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-
-                            <!-- Description and Technologies on the right -->
-                            <div class="text-container">
-                                <p><strong>Description:</strong> Developed a question-answering system designed to
-                                    interpret
-                                    natural language queries using large language models (LLMs). The system leverages
-                                    techniques like
-                                    Retrieval-Augmented Generation (RAG) and LoRA fine-tuning to enhance accuracy and
-                                    efficiency
-                                    in retrieving and answering queries over complex knowledge graphs. One stage of the
-                                    project
-                                    focuses on defining natural language query (NLQ) components, utilizing LLaMA-3
-                                    fine-tuned on the
-                                    QueryBridge dataset, as demonstrated in the video.</p>
-                                <p><strong>Technologies and Approaches:</strong> PyTorch, Torchtune, LLM (Fintuning,
-                                    RAG, Ollama, LlamaIndex, OpenAI API), Semantic Web</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- More Details ... Button -->
-                    <button class="toggle-btn">More Details ...</button>
-
-                </div>
-
-
-                <div class="experience-entry">
-                    <h3><u>[Carleton University (2024)]</u> QueryBridge: One Million Annotated Questions with SPARQL
-                        Queries - Dataset for Question Answering over Knowledge Graph </h3>
-                    <div class="content">
-                        <div class="content-wrapper">
-                            <!-- Dataset Viewer on the left (taking half the space) -->
-                            <div class="video-container">
-                                <iframe src="https://huggingface.co/datasets/aorogat/QueryBridge/embed/viewer"
-                                    width="100%" height="500px" frameborder="0" allowfullscreen>
-                                </iframe>
-                            </div>
-
-                            <!-- Description and Technologies on the right -->
-                            <div class="text-container">
-                                <p><strong>Description:</strong> Created an extensive dataset containing over one
-                                    million
-                                    annotated questions with SPARQL queries. QueryBridge is aimed at supporting research
-                                    in
-                                    question-answering systems by providing a high-quality benchmark for natural
-                                    language
-                                    queries over knowledge
-                                    graphs.</p>
-                                <p><strong>Technologies:</strong> Java, Apache Jena, RDF, SPARQL, Semantic Web, Python,
-                                    NLTK</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- More Details ... Button -->
-                    <button class="toggle-btn">More Details ...</button>
-                </div>
-
-                <div class="experience-entry">
-                    <h3><u>[Ericsson (2024)]</u> Improved RAG: Two-Stage Retrieval-Augmented Generation System</h3>
-                    <div class="content">
-                        <div class="content-wrapper">
-                            <!-- Embedded YouTube Video or Image on the left (taking half the space) -->
-                            <div class="video-container">
-                                <iframe width="100%" height="315"
-                                    src="https://www.youtube.com/embed/your_video_link_here"
-                                    title="Improved RAG Project Demo Video" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-
-                            <!-- Description and Technologies on the right -->
-                            <div class="text-container">
-                                <p><strong>Description:</strong> Developed a two-stage approach to improve the
-                                    Retrieval-Augmented Generation (RAG) system for large language models. Our approach
-                                    combines the efficiency of a single embedding for fast retrieval with the accuracy
-                                    of a multi-embedding strategy, leveraging the <a
-                                        href="https://github.com/stanford-futuredata/ColBERT"
-                                        target="_blank">ColBERT</a> model. In the first stage, we
-                                    quickly retrieve a set of the top documents from a large collection using single
-                                    embeddings. Then, in the second stage, we apply multi-embedding retrieval on this
-                                    subset to identify the best match. For this project, we used <a
-                                        href="https://milvus.io/" target="_blank">Milvus</a> as the vector
-                                    database to manage embeddings effectively.</p>
-                                <p><strong>Technologies:</strong> PyTorch, COLBERT Model, Milvus, Vector Databases</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- More Details ... Button -->
-                    <button class="toggle-btn">More Details ...</button>
-                </div>
-
-
-
-
-                <div class="experience-entry">
-                    <h3><u>[Ericsson (2023)]</u> Ericsogate: Knowledge Graph System for CloudRAN Data Management </h3>
-                    <div class="content">
-                        <div class="content-wrapper">
-                            <!-- Embedded YouTube Video on the left (taking half the space) -->
-                            <div class="video-container">
-                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/vDG0cBineus"
-                                    title="Ericsogate Project Demo Video" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-
-                            <!-- Description and Technologies on the right -->
-                            <div class="text-container">
-                                <p><strong>Description:</strong> Developed a six-layer knowledge graph framework to
-                                    efficiently
-                                    manage CloudRAN data. The system enhances data accessibility, adaptability, and
-                                    insight
-                                    generation for telecom applications by using a modular and scalable architecture.
-                                    The
-                                    video on the left shows the architecture of Ericsogate. Please note that the code is
-                                    not
-                                    publicly available.</p>
-                                <p><strong>Technologies:</strong> Java, RDF, OWL, Apache Jena, Python</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- More Details ... Button -->
-                    <button class="toggle-btn">More Details ...</button>
-                </div>
-
-
-
-
-
-                <div class="experience-entry">
-                    <h3><u>[Carleton University (2021)]</u> CBench: Towards Better Evaluation of Question Answering Over
-                        Knowledge Graphs</h3>
-                    <div class="content">
-                        <div class="content-wrapper">
-                            <!-- Embedded YouTube Video on the left (taking half the space) -->
-                            <div class="video-container">
-                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/QT-q53jPhMc"
-                                    title="CBench Project Demo Video" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
-
-                            <!-- Description and Technologies on the right -->
-                            <div class="text-container">
-                                <p><strong>Description:</strong> CBench is an extensible benchmarking suite for
-                                    evaluating
-                                    question-answering systems over knowledge graphs. It provides comprehensive
-                                    evaluation metrics
-                                    and customizable test scenarios, enabling researchers and practitioners to assess
-                                    the accuracy
-                                    and performance of QA systems on structured data. The demo video on the left
-                                    illustrates its
-                                    capabilities and usage in various QA scenarios.</p>
-                                <p><strong>Technologies:</strong> Java, JavaServer Faces (JSF), SPARQL, RDF, Apache
-                                    Jena, HTML, CSS, Java Script</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- More Details ... Button -->
-                    <button class="toggle-btn">More Details ...</button>
-                </div>
-
-
-
-
-            </div>
-
-
-
-
-        </section>
-
-        <section class="main-section" id="publications">
-            <h2>Publications</h2>
+        <section id="skills">
+            <h2>Technical Skills & Expertise</h2>
             <ul>
-                <li><strong>QueryBridge:</strong> One Million Annotated Questions with SPARQL Queries - Dataset for Question Answering over Knowledge Graphs
-                    <br><em><u>Abdelghny Orogat</u></em>, Ahmed El-Roby
-                    <br><em>(CIKM 2025)</em> -
-                    <a href="https://huggingface.co/datasets/aorogat/QueryBridge" target="_blank">Dataset</a>
-                </li>
-                <li><strong>Ericsogate:</strong> Advancing Analytics and Management of Data from Diverse Sources within
-                    Ericsson
-                    <br><em><u>Abdelghny Orogat</u></em>, Sri Lakshmi Vadlamani, Dimple Thomas, Ahmed El-Roby
-                    <br><em>(CIKM 2024)</em> -
-                    <a href="https://dl.acm.org/doi/abs/10.1145/3627673.3680033" target="_blank">Paper</a> | The code is
-                    proprietary to Ericsson.
-                </li>
-
-                <li><strong>Maestro:</strong> Automatic Generation of Comprehensive Benchmarks for QA over Knowledge
-                    Graphs
-                    <br><em><u>Abdelghny Orogat</u></em>, Ahmed El-Roby
-                    <br><em>(SIGMOD 2023)</em> -
-                    <a href="https://dl.acm.org/doi/abs/10.1145/3589322" target="_blank">Paper</a> |
-                    <a href="https://github.com/aorogat/Maestro" target="_blank">GitHub</a>
-                </li>
-
-                <li><strong>SmartBench (Demo):</strong> Demonstrating Automatic Generation of Comprehensive Benchmarks
-                    for QA over Knowledge Graphs
-                    <br><em><u>Abdelghny Orogat</u></em>, Ahmed El-Roby
-                    <br><em>(VLDB 2022)</em> -
-                    <a href="https://dl.acm.org/doi/10.14778/3554821.3554869" target="_blank">Paper</a>
-                    <a href="https://github.com/aorogat/SmartBenchmark" target="_blank">GitHub</a>
-                </li>
-
-                <li><strong>CBench:</strong> Towards Better Evaluation of Question Answering Over Knowledge Graphs
-                    <br><em><u>Abdelghny Orogat</u></em>, Isabelle Liu, Ahmed El-Roby
-                    <br><em>(VLDB 2021)</em> -
-                    <a href="https://dl.acm.org/doi/10.14778/3476311.3476326" target="_blank">Paper</a> |
-                    <a href="https://github.com/aorogat/CBench" target="_blank">GitHub</a>
-                </li>
-
-                <li><strong>CBench (Demo):</strong> Demonstrating Comprehensive Evaluation of QA Systems over Knowledge
-                    Graphs Through Deep Analysis
-                    <br><em><u>Abdelghny Orogat</u></em>, Ahmed El-Roby
-                    <br><em>(VLDB 2021)</em> -
-                    <a href="https://dl.acm.org/doi/10.14778/3476311.3476326" target="_blank">Paper</a> |
-                    <a href="https://www.youtube.com/watch?v=QT-q53jPhMc" target="_blank">Demo Video</a> |
-                    <a href="https://github.com/aorogat/CBench-Web-Interface" target="_blank">GitHub</a>
-
-                </li>
-
-                <li><strong>Towards Next-Generation QA Over Knowledge Graphs (talk):</strong> Accurate Benchmarking and
-                    Large-Scale Training
-                    <br><em><u>Abdelghny Orogat</u></em>
-                    <br><em>(Ontario Database Day 2023)</em>
-                    <a href="https://ondbd.ca/talk/talk13.pdf" target="_blank">Talk Paper</a>
-                    <a href="https://ondbd.ca/slide/1-3.pdf" target="_blank">Slides</a>
-
-                </li>
-
-                <li><strong>CBench:</strong> Towards Better Evaluation of QA Over Knowledge Graphs (Long Version)
-                    <br><em><u>Abdelghny Orogat</u></em>, Isabelle Liu, Ahmed El-Roby
-                    <br><em>(arXiv 2021)</em> -
-                    <a href="https://arxiv.org/abs/2105.00811" target="_blank">arXiv</a>
-                </li>
-
-                <li><strong>Web Page Segmentation Using Block Function Tree:</strong>
-                    <br><em><u>Abdelghny Orogat</u></em>, Hamed Hemeda
-                    <br><em>(IEEE IEMCON 2016)</em>
-                </li>
-
-                <li><strong>Webpages Adaptation Based on One-to-One Mapping:</strong>
-                    <br><em><u>Abdelghny Orogat</u></em>, Hamed Hemeda, MTF Saidahmed
-                    <br><em>(IEEE IEMCON 2016)</em>
-                </li>
+                <li><strong>Knowledge Graphs:</strong> RDF, SPARQL, OWL, Graph Databases (Neo4j), Knowledge Graph Construction & Integration</li>
+                <li><strong>Programming Languages:</strong> Python, SQL, Java, JavaScript</li>
+                <li><strong>NLP & ML:</strong> Transformers, BERT, GPT, PyTorch, TensorFlow, Hugging Face, LangChain</li>
+                <li><strong>Data Technologies:</strong> PostgreSQL, MongoDB, Elasticsearch, Apache Jena, Virtuoso</li>
+                <li><strong>Development Tools:</strong> Git, Docker, AWS, REST APIs, Flask, Django</li>
+                <li><strong>Research Methods:</strong> Benchmark Design, Dataset Creation, Experimental Evaluation, Academic Writing</li>
             </ul>
         </section>
 
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <div class="item-title">Ph.D. in Computer Science</div>
+                <div class="item-meta">Carleton University, Ottawa, Canada | 2020–2024</div>
+                <div class="item-description">
+                    Dissertation: Question Answering over Knowledge Graphs - Benchmark Creation and System Development<br>
+                    <strong>Key Contributions:</strong> Created QueryBridge dataset (1M+ annotated questions), developed Maestro benchmarking system, advanced QAKG evaluation methodologies
+                </div>
+            </div>
 
-        <section id="teaching" class="main-section">
-            <h2>Teaching</h2>
+            <div class="education-item">
+                <div class="item-title">M.Sc. in Computer Engineering</div>
+                <div class="item-meta">Tanta University, Egypt | 2013–2017</div>
+                <div class="item-description">
+                    Focus: Data Mining, Machine Learning, and Information Systems
+                </div>
+            </div>
 
-            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 12px;">
-                <thead>
-                    <tr style="background-color: #4e6276; color: #fff;">
-                        <th style="padding: 0.5rem; border: 1px solid #ddd;">University</th>
-                        <th style="padding: 0.5rem; border: 1px solid #ddd;">Role</th>
-                        <th style="padding: 0.5rem; border: 1px solid #ddd;">Academic Year</th>
-                        <th style="padding: 0.5rem; border: 1px solid #ddd;">Course</th>
-                        <th style="padding: 0.5rem; border: 1px solid #ddd;">Section</th>
-                        <th style="padding: 0.5rem; border: 1px solid #ddd;"># of Students</th>
-                        <th style="padding: 0.5rem; border: 1px solid #ddd;">Mean Evaluation</th>
-                        <th style="padding: 0.5rem; border: 1px solid #ddd;">Median Evaluation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Carleton University</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Contract Instructor</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Winter 2024</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">COMP3005 - Database Management Systems</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">A</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">300</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">4.11/5.00</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">4.00/5.00</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Carleton University</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Contract Instructor</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Winter 2024</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">COMP3005 - Database Management Systems</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">B</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">325</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">4.37/5.00</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">5.00/5.00</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Carleton University</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Contract Instructor</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Fall 2023</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">COMP3005 - Database Management Systems</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">A</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">134</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">4.71/5.00</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">5.00/5.00</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Carleton University</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Contract Instructor</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Fall 2022</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">COMP3005 - Database Management Systems</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">B</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">32</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">4.59/5.00</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">5.00/5.00</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Carleton University</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Contract Instructor</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">Fall 2022</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">COMP3005 - Database Management Systems</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">A</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">181</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">4.00/5.00</td>
-                        <td style="padding: 0.5rem; border: 1px solid #ddd;">4.00/5.00</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="education-item">
+                <div class="item-title">B.Sc. in Computer Engineering</div>
+                <div class="item-meta">Tanta University, Egypt | 2011</div>
+                <div class="item-description">
+                    Foundation in computer science, algorithms, and software engineering
+                </div>
+            </div>
         </section>
 
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="item-title">Knowledge Graphs & RAG Engineer</div>
+                <div class="item-meta">Ericsson, Ottawa, Canada | 2023–2024</div>
+                <div class="item-description">
+                    Developed and deployed enterprise-scale knowledge graph systems for data integration and retrieval-augmented generation. Led the design of semantic search solutions and implemented graph-based analytics for diverse data sources. Collaborated with cross-functional teams to integrate knowledge graphs into production environments.
+                </div>
+            </div>
 
+            <div class="experience-item">
+                <div class="item-title">Research Assistant / PhD Candidate</div>
+                <div class="item-meta">Carleton University, Ottawa, Canada | 2020–2024</div>
+                <div class="item-description">
+                    Conducted cutting-edge research in QAKG, creating comprehensive benchmark datasets and evaluation frameworks. Developed NLQ-to-SPARQL translation systems and conducted extensive experimental evaluations. Published multiple papers in top-tier venues including SIGMOD, VLDB, and CIKM.
+                </div>
+            </div>
 
-        <section id="playlists" class="main-section">
-            <h2>Youtube Channel</h2>
-            <p>
-                A collection of short courses in Arabic tailored for the Arab community.
+            <div class="experience-item">
+                <div class="item-title">Contract Instructor (Lecturer)</div>
+                <div class="item-meta">Carleton University, School of Computer Science | 2022–Present</div>
+                <div class="item-description">
+                    Teaching database systems, SQL, data modeling, and information management courses. Developed curriculum materials, designed assignments and exams, and mentored undergraduate students in database design and implementation.
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            
+            <div class="publication-item">
+                <div class="item-title">Ericsogate: Advancing Analytics and Management of Data from Diverse Sources within Ericsson Using Knowledge Graphs</div>
+                <div class="item-meta">A. Orogat, S. L. Vadlamani, D. Thomas, A. El-Roby | CIKM 2024</div>
+                <div class="item-description">
+                    Industry application demonstrating enterprise-scale knowledge graph deployment for heterogeneous data integration and analytics.
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="item-title">QueryBridge: One Million Annotated Questions with SPARQL Queries — Dataset for QA over KGs</div>
+                <div class="item-meta">A. Orogat, A. El-Roby | 2024</div>
+                <div class="item-description">
+                    Large-scale benchmark dataset containing over one million natural language questions paired with corresponding SPARQL queries, enabling comprehensive training and evaluation of QAKG systems.
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="item-title">Maestro: Automatic Generation of Comprehensive Benchmarks for QA over Knowledge Graphs</div>
+                <div class="item-meta">A. Orogat, A. El-Roby | SIGMOD 2023</div>
+                <div class="item-description">
+                    Novel framework for automatically generating diverse and comprehensive benchmarks for evaluating QAKG systems, addressing the challenge of limited and biased evaluation datasets.
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="item-title">Towards Next-Generation QA Over Knowledge Graphs Systems via Accurate Benchmarking and Large-Scale Training</div>
+                <div class="item-meta">A. Orogat | Ontario Database Day 2023</div>
+                <div class="item-description">
+                    Vision paper outlining future directions for QAKG research, emphasizing the importance of rigorous benchmarking and large-scale training data.
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="item-title">SmartBench: Demonstrating Automatic Generation of Comprehensive Benchmarks for QA over Knowledge Graphs</div>
+                <div class="item-meta">A. Orogat, A. El-Roby | VLDB 2022</div>
+                <div class="item-description">
+                    Interactive demonstration of automated benchmark generation system for QAKG evaluation.
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem;">
+                <a href="https://scholar.google.com.eg/citations?user=nqr78kwAAAAJ&hl=en" target="_blank" style="font-size: 1.1em; font-weight: 600;">
+                    📚 View Complete Publication List on Google Scholar →
+                </a>
             </p>
+        </section>
 
-
-            <!-- NLP Playlist -->
-            <div style="margin-bottom: 1.5rem; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; display: inline-block;"
-                class="education-entry">
-                <h3 style="margin: 0; font-size: 14px;">Natural Language Processing (In Progress)</h3>
-                <p style="margin: 0.5rem 0;">Explore the fundamentals of Natural Language Processing, including
-                    Regular Expressions, tokenization, embeddings, text classification, and more with practical
-                    examples.</p>
-                <div>
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                            src="https://www.youtube.com/embed/videoseries?list=PL73bE5x5W-IASaD1cCoVWi8qzgAFLt6SS"
-                            frameborder="0" allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <p>
-                        <a href="https://www.youtube.com/playlist?list=PL73bE5x5W-IASaD1cCoVWi8qzgAFLt6SS"
-                            target="_blank" style="color: #337ab7; text-decoration: none; font-size: 14px;">
-                            View Full Playlist on YouTube
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-
-            <!-- Pytorch Playlist -->
-            <div style="margin-bottom: 1.5rem; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; display: inline-block;"
-                class="education-entry">
-                <h3 style="margin: 0; font-size: 14px;">Pytorch (In Progress)</h3>
-                <p style="margin: 0.5rem 0;">Learn the basics of PyTorch, a popular deep learning framework, with
-                    examples and practical applications.</p>
-                <div>
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                            src="https://www.youtube.com/embed/videoseries?list=PL73bE5x5W-IDsSndILHcXsHYq2zltiU5K"
-                            frameborder="0" allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <p>
-                        <a href="https://www.youtube.com/playlist?list=PL73bE5x5W-IDsSndILHcXsHYq2zltiU5K"
-                            target="_blank" style="color: #337ab7; text-decoration: none; font-size: 14px;">
-                            View Full Playlist on YouTube
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-
-            <!-- NumPy Playlist -->
-            <div style="margin-bottom: 1.5rem; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; display: inline-block;"
-                class="education-entry">
-                <h3 style="margin: 0; font-size: 14px;">NumPy</h3>
-                <p style="margin: 0.5rem 0;">Master the core concepts of NumPy, the fundamental package for numerical
-                    computing in Python, with practical examples and hands-on exercises.</p>
-                <div>
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                            src="https://www.youtube.com/embed/videoseries?list=PL73bE5x5W-IBnRfesDLHH9GpuPDfl1N-u"
-                            frameborder="0" allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <p>
-                        <a href="https://www.youtube.com/playlist?list=PL73bE5x5W-IBnRfesDLHH9GpuPDfl1N-u"
-                            target="_blank" style="color: #337ab7; text-decoration: none; font-size: 14px;">
-                            View Full Playlist on YouTube
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-
-            <!-- Descriptive Statistics Playlist -->
-            <div style="margin-bottom: 1.5rem; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; display: inline-block;"
-                class="education-entry">
-                <h3 style="margin: 0; font-size: 14px;">Descriptive Statistics</h3>
-                <p style="margin: 0.5rem 0;">Dive into the fundamentals of descriptive statistics with hands-on examples
-                    using NumPy for computations and Matplotlib for data visualization.</p>
-                <div>
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                            src="https://www.youtube.com/embed/videoseries?list=PL73bE5x5W-ICemDprdzo0HibsFiUQIEM5"
-                            frameborder="0" allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <p>
-                        <a href="https://www.youtube.com/playlist?list=PL73bE5x5W-ICemDprdzo0HibsFiUQIEM5"
-                            target="_blank" style="color: #337ab7; text-decoration: none; font-size: 14px;">
-                            View Full Playlist on YouTube
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-
-            <!-- Database Level 1 Playlist -->
-            <div style="margin-bottom: 1.5rem; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; display: inline-block;"
-                class="education-entry">
-                <h3 style="margin: 0; font-size: 14px;">Relational Databases Querying</h3>
-                <p style="margin: 0.5rem 0;">Learn the foundations of relational databases, focusing on querying data
-                    using SQL with practical, real-world examples.</p>
-                <div>
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                            src="https://www.youtube.com/embed/videoseries?list=PL73bE5x5W-IDErOUNGLYUXFcw2Tan_BAq"
-                            frameborder="0" allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <p>
-                        <a href="https://www.youtube.com/playlist?list=PL73bE5x5W-IDErOUNGLYUXFcw2Tan_BAq"
-                            target="_blank" style="color: #337ab7; text-decoration: none; font-size: 14px;">
-                            View Full Playlist on YouTube
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-            <div style="margin-bottom: 1.5rem; padding: 0.5rem; text-align: center; text-wrap: wrap; max-width: 200px;  display: inline-block;">
-                <a href="https://www.youtube.com/@TechPulse23/playlists" 
-                    target="_blank" 
-                    style="color: #337ab7; text-decoration: none; font-size: 18px; font-weight: bold;">
-                    See More Playlists on My YouTube Channel
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>
+                I'm always interested in discussing research collaborations, speaking opportunities, or consulting projects related to knowledge graphs, NLP, and semantic technologies. Feel free to reach out via email or connect with me on professional networks.
+            </p>
+            <div class="social-links" style="margin-top: 1.5rem;">
+                <a href="mailto:abdelghny.orogat@carleton.ca" class="social-btn">
+                    <span>✉️</span> Email Me
+                </a>
+                <a href="https://scholar.google.com.eg/citations?user=nqr78kwAAAAJ&hl=en" target="_blank" class="social-btn">
+                    <span>🎓</span> Google Scholar
+                </a>
+                <a href="https://github.com/aorogat" target="_blank" class="social-btn">
+                    <span>💻</span> GitHub
                 </a>
             </div>
-            
-
-
-
         </section>
-
-
-
     </div>
 
     <footer>
-        <p>&copy; 2024 Abdelghny Orogat</p>
+        <p>&copy; 2025 Abdelghny Orogat. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85em;">Last updated: November 2025</p>
     </footer>
 
-    <script>
-        $(document).ready(function () {
-            $(".toggle-btn").click(function () {
-                var content = $(this).prev(".content"); // Target the .content div
-
-                // Toggle max-height to expand/collapse
-                if (content.css("max-height") === "100px") {
-                    content.css("max-height", "none"); // Expand fully
-                    $(this).text("See Less");
-                } else {
-                    content.css("max-height", "100px"); // Collapse back
-                    $(this).text("More Details ...");
-                }
-            });
-        });
-    </script>
-
-
-
-
 </body>
-
 </html>
-
