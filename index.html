@@ -12,183 +12,226 @@
 }
 
 body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    background: #ffffff;
-    color: #1a1a1a;
-    line-height: 1.7;
-    font-size: 16px;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+    font-size: 15px;
 }
 
-/* Container */
 .container {
-    max-width: 800px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 60px 40px;
+    padding: 0 30px;
 }
 
 /* Header */
 header {
-    margin-bottom: 50px;
-    border-bottom: 1px solid #d0d0d0;
-    padding-bottom: 30px;
+    padding: 40px 0 30px 0;
+    border-bottom: 2px solid #333;
+    margin-bottom: 40px;
 }
 
-.identity {
-    margin-bottom: 20px;
+.header-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
 }
 
-h1 {
-    font-size: 2.2rem;
+.photo {
+    flex-shrink: 0;
+}
+
+.photo img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ddd;
+}
+
+.photo-placeholder {
+    width: 200px;
+    height: 200px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 13px;
+}
+
+.header-text h1 {
+    font-size: 32px;
     font-weight: 400;
-    letter-spacing: -0.5px;
     margin-bottom: 8px;
     color: #000;
 }
 
-.role {
-    font-size: 1.05rem;
-    color: #333;
-    font-style: italic;
-    margin-bottom: 18px;
+.title {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
 }
 
-.research-statement {
-    font-size: 1rem;
-    line-height: 1.65;
-    color: #2a2a2a;
-    margin-bottom: 20px;
-    max-width: 680px;
+.contact {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 15px;
 }
 
-.contact-line {
-    font-size: 0.95rem;
-    color: #444;
-    margin: 5px 0;
-}
-
-.contact-line a {
-    color: #1a5490;
+.contact a {
+    color: #0066cc;
     text-decoration: none;
 }
 
-.contact-line a:hover {
+.contact a:hover {
     text-decoration: underline;
 }
 
 /* Navigation */
 nav {
-    margin: 25px 0 40px 0;
-    padding: 15px 0;
-    border-top: 1px solid #e8e8e8;
-    border-bottom: 1px solid #e8e8e8;
+    margin: 30px 0;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
 }
 
 nav a {
-    color: #1a5490;
+    color: #0066cc;
     text-decoration: none;
-    margin-right: 20px;
-    font-size: 0.95rem;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin-right: 25px;
+    font-size: 15px;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-/* Section styling */
+/* Sections */
 section {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 600;
     margin-bottom: 20px;
     color: #000;
-    border-bottom: 1px solid #c0c0c0;
     padding-bottom: 8px;
+    border-bottom: 2px solid #000;
 }
 
 h3 {
-    font-size: 1.15rem;
+    font-size: 17px;
     font-weight: 600;
-    margin: 25px 0 10px 0;
-    color: #1a1a1a;
-}
-
-h4 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin: 15px 0 8px 0;
-    color: #2a2a2a;
+    margin: 20px 0 10px 0;
+    color: #000;
 }
 
 p {
-    margin-bottom: 15px;
-    text-align: justify;
+    margin-bottom: 12px;
+    line-height: 1.6;
 }
 
-/* Research agenda */
-.research-theme {
-    margin: 35px 0;
+/* Research interests */
+.interests {
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #333;
+}
+
+.interests ul {
+    list-style: none;
+    margin: 10px 0 0 0;
+}
+
+.interests li {
+    margin: 8px 0;
     padding-left: 20px;
-    border-left: 3px solid #1a5490;
+    position: relative;
 }
 
-.research-theme h3 {
-    margin-top: 0;
+.interests li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
 }
 
-.theme-description {
-    font-size: 0.98rem;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-/* Flagship contributions */
-.flagship-work {
+/* Projects */
+.project {
     margin: 30px 0;
-    padding: 20px 0;
-    border-top: 1px solid #e0e0e0;
+    padding: 25px 0;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.flagship-work:first-of-type {
-    border-top: none;
+.project:last-child {
+    border-bottom: none;
 }
 
-.work-meta {
-    font-size: 0.9rem;
+.project h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.project-meta {
+    font-size: 13px;
     color: #666;
+    margin-bottom: 12px;
     font-style: italic;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background: #fafafa;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+}
+
+.diagram-placeholder {
+    background: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project p {
+    font-size: 15px;
+    line-height: 1.6;
     margin-bottom: 10px;
 }
 
-.work-description {
-    font-size: 0.98rem;
-    line-height: 1.65;
-}
-
-.work-link {
-    font-size: 0.9rem;
-    margin-top: 8px;
+.project-link {
     display: inline-block;
-    color: #1a5490;
+    margin-top: 8px;
+    color: #0066cc;
     text-decoration: none;
+    font-size: 14px;
 }
 
-.work-link:hover {
+.project-link:hover {
     text-decoration: underline;
 }
 
 /* Publications */
 .pub-list {
     list-style: none;
-    margin-top: 20px;
 }
 
 .pub-item {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
     border-bottom: 1px solid #f0f0f0;
 }
 
@@ -198,83 +241,101 @@ p {
 
 .pub-title {
     font-weight: 600;
-    color: #1a1a1a;
-    font-size: 1rem;
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 5px;
 }
 
 .pub-authors {
-    font-size: 0.95rem;
-    color: #444;
-    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+    margin: 3px 0;
 }
 
 .pub-venue {
-    font-size: 0.95rem;
-    color: #1a5490;
+    font-size: 14px;
+    color: #0066cc;
     font-style: italic;
 }
 
-/* Lists */
-ul {
-    list-style-position: outside;
-    margin-left: 25px;
+/* Teaching */
+.course {
+    margin: 20px 0;
+    padding: 15px 0;
 }
 
-li {
-    margin-bottom: 10px;
-    line-height: 1.65;
+.course h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
-/* Teaching section */
-.teaching-summary {
-    font-size: 0.98rem;
-    margin-bottom: 20px;
+.course-info {
+    font-size: 14px;
+    color: #555;
     line-height: 1.7;
 }
 
-.course-details {
-    font-size: 0.95rem;
-    margin: 15px 0;
-    padding-left: 15px;
-}
-
 /* Awards */
-.award-list {
+.awards ul {
     list-style: none;
-    margin-left: 0;
 }
 
-.award-list li {
-    margin-bottom: 12px;
-    font-size: 0.98rem;
+.awards li {
+    margin: 12px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 15px;
+}
+
+.awards li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
 /* Footer */
 footer {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid #d0d0d0;
-    font-size: 0.85rem;
-    color: #666;
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
     text-align: center;
+    font-size: 13px;
+    color: #999;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+    
+    .photo-placeholder,
+    .photo img {
+        width: 150px;
+        height: 150px;
+    }
+    
     .container {
-        padding: 40px 20px;
+        padding: 0 20px;
+    }
+    
+    header {
+        padding: 30px 0 20px 0;
     }
     
     h1 {
-        font-size: 1.8rem;
+        font-size: 26px !important;
     }
     
     h2 {
-        font-size: 1.3rem;
+        font-size: 20px;
     }
     
-    p {
-        text-align: left;
+    nav a {
+        display: inline-block;
+        margin-bottom: 10px;
     }
 }
 </style>
@@ -283,25 +344,29 @@ footer {
 
 <div class="container">
     <header>
-        <div class="identity">
-            <h1>Abdelghny Orogat</h1>
-            <p class="role">Postdoctoral Fellow, Concordia University</p>
-            <p class="research-statement">
-                I develop multi-agent systems and memory-augmented architectures for knowledge-grounded reasoning, 
-                focusing on how intelligent agents can coordinate over structured knowledge graphs to perform 
-                complex question answering, planning, and autonomous decision-making.
-            </p>
-        </div>
-        
-        <div class="contact-line">
-            <strong>Email:</strong> <a href="mailto:abdelghny.orogat@concordia.ca">abdelghny.orogat@concordia.ca</a>
-        </div>
-        <div class="contact-line">
-            <strong>PhD:</strong> Computer Science, Carleton University
+        <div class="header-content">
+            <div class="photo">
+                <img 
+                    src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/main/img.jpg"
+                    alt="Abdelghny Orogat"
+                />
+            </div>
+
+            <div class="header-text">
+                <h1>Abdelghny Orogat</h1>
+                <div class="title">Postdoctoral Fellow</div>
+                <div class="title">Department of Computer Science and Software Engineering<br>Concordia University</div>
+                <div class="contact">
+                    <strong>Email:</strong> <a href="mailto:abdelghny.orogat@concordia.ca">abdelghny.orogat@concordia.ca</a><br>
+                    <strong>Office:</strong> TBD<br>
+                    <strong>PhD:</strong> Computer Science, Carleton University
+                </div>
+            </div>
         </div>
     </header>
 
     <nav>
+        <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#teaching">Teaching</a>
@@ -309,245 +374,200 @@ footer {
     </nav>
 
     <section id="about">
-        <h2>Research Overview</h2>
+        <h2>About</h2>
         <p>
-            My research investigates foundational problems in multi-agent coordination and memory-augmented 
-            reasoning over large-scale knowledge graphs. I am particularly interested in how collections of 
-            specialized agents can decompose complex reasoning tasks, maintain persistent memory structures, 
-            and coordinate effectively to produce verifiable, interpretable results.
+            I am a postdoctoral fellow at Concordia University working with Professor Essam Mansour. 
+            I completed my PhD in Computer Science at Carleton University under the supervision of 
+            Professor Ahmed El-Roby.
         </p>
         <p>
-            During my doctoral work at Carleton University under Professor Ahmed El-Roby, I developed 
-            large-scale benchmarking frameworks and automated evaluation platforms for knowledge graph 
-            question answering. This work addressed fundamental challenges in dataset construction, 
-            evaluation bias, and system scalability—culminating in contributions to SIGMOD, VLDB, and CIKM.
+            My research focuses on multi-agent systems and knowledge-grounded reasoning. I develop 
+            architectures that enable intelligent agents to coordinate over structured knowledge graphs 
+            for complex question answering, planning, and autonomous decision-making.
         </p>
-        <p>
-            I currently work with Professor Essam Mansour at Concordia University, where my research 
-            explores how large language models can be orchestrated into reliable multi-agent systems 
-            capable of structured reasoning, tool execution, and long-horizon planning. This work builds 
-            on prior experience developing production knowledge graph systems at Ericsson for CloudRAN analytics.
-        </p>
+        
+        <div class="interests">
+            <h3>Research Interests</h3>
+            <ul>
+                <li>Multi-agent systems and coordination</li>
+                <li>Knowledge graph question answering</li>
+                <li>Memory-augmented reasoning architectures</li>
+                <li>Benchmark design and systematic evaluation</li>
+                <li>Large language models for structured reasoning</li>
+            </ul>
+        </div>
     </section>
 
     <section id="research">
-        <h2>Research Agenda</h2>
+        <h2>Research</h2>
         
-        <div class="research-theme">
-            <h3>Multi-Agent Architectures for Knowledge-Grounded Reasoning</h3>
-            <p class="theme-description">
-                <strong>Core question:</strong> How can we design agent frameworks where specialized 
-                reasoning modules coordinate effectively over structured knowledge sources? My work 
-                addresses this through the development of agent orchestration platforms that decompose 
-                complex queries into retrieval, planning, and validation subtasks, with each agent 
-                maintaining appropriate memory and communication protocols.
-            </p>
-        </div>
+        <p>
+            My research addresses fundamental challenges in how AI systems can reason effectively over 
+            structured knowledge. I develop methods for decomposing complex reasoning tasks across 
+            specialized agents, designing comprehensive evaluation benchmarks, and building scalable 
+            knowledge graph systems for real-world applications.
+        </p>
 
-        <div class="research-theme">
-            <h3>Benchmark Design and Systematic Evaluation</h3>
-            <p class="theme-description">
-                <strong>Core question:</strong> What evaluation methodologies enable fair, comprehensive 
-                assessment of knowledge-intensive AI systems? I have developed automated benchmark 
-                generation platforms and large-scale annotated datasets to address coverage limitations 
-                and evaluation bias in knowledge graph question answering.
-            </p>
-        </div>
-
-        <div class="research-theme">
-            <h3>Memory and Persistence in Agent Systems</h3>
-            <p class="theme-description">
-                <strong>Core question:</strong> How should agents maintain, update, and reason over 
-                persistent memory structures? This research direction examines adaptive memory models, 
-                reflective planning mechanisms, and techniques for long-horizon reasoning that require 
-                agents to accumulate and synthesize information across extended interactions.
-            </p>
-        </div>
-    </section>
-
-    <section id="contributions">
-        <h2>Principal Research Contributions</h2>
-
-        <div class="flagship-work">
+        <div class="project">
             <h3>Chatty-KG: Multi-Agent Question Answering over Knowledge Graphs</h3>
-            <p class="work-meta">SIGMOD 2026 · Multi-Agent Systems</p>
-            <p class="work-description">
-                Developed a multi-agent architecture for knowledge graph question answering using 
-                LangGraph-based orchestration. The system decomposes KGQA into specialized reasoning 
-                roles—entity retrieval, query planning, and answer validation—enabling robust multi-step 
-                reasoning over large knowledge graphs. This work demonstrates how agent specialization 
-                and structured communication protocols can improve both accuracy and interpretability 
-                in complex question answering tasks.
+            <p class="project-meta">SIGMOD 2026 (with R. Omar, I. Abdelaziz, O. Mangukiya, P. Kalnis, E. Mansour)</p>
+            
+            <div class="project-image">
+                <img
+                    src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/main/chatty_kg.png"
+                    alt="Chatty-KG multi-agent system architecture"
+                />
+                <p style="font-size: 13px; color: #666; margin-top: 6px;">
+                    Chatty-KG architecture: multi-agent orchestration with LangGraph for entity retrieval, query planning, and answer validation.
+                </p>
+            </div>
+
+            
+            <p>
+                Developed a multi-agent architecture for knowledge graph question answering that 
+                decomposes KGQA into specialized reasoning roles. The system uses LangGraph-based 
+                orchestration to coordinate entity retrieval, query planning, and answer validation 
+                agents, enabling robust multi-step reasoning over large knowledge graphs.
             </p>
         </div>
 
-        <div class="flagship-work">
-            <h3>QueryBridge: A Million-Scale Dataset for Knowledge Graph Question Answering</h3>
-            <p class="work-meta">CIKM 2025 · Dataset Release</p>
-            <p class="work-description">
+        <div class="project">
+            <h3>QueryBridge: Large-Scale Dataset for KGQA</h3>
+            <p class="project-meta">CIKM 2025 (with A. El-Roby)</p>
+            
+            <div class="project-image">
+                <div class="diagram-placeholder">
+                    [Dataset Overview]<br><br>
+                    1,000,000+ question-SPARQL pairs<br>
+                    Multiple knowledge graphs<br>
+                    Diverse query patterns
+                </div>
+            </div>
+            
+            <p>
                 Designed and released a large-scale dataset containing over one million natural language 
-                questions paired with executable SPARQL queries. QueryBridge addresses fundamental data 
-                scarcity problems in natural language to SPARQL translation research, providing diverse 
-                query patterns across multiple knowledge graphs. The dataset enables systematic training 
-                and evaluation of semantic parsing systems at scale.
+                questions paired with executable SPARQL queries. QueryBridge addresses data scarcity in 
+                natural language to SPARQL translation research, providing diverse query patterns across 
+                multiple knowledge graphs for systematic training and evaluation.
             </p>
-            <a href="https://aorogat.github.io/QueryBridge/" class="work-link">Dataset Website ↗</a>
+            <a href="https://aorogat.github.io/QueryBridge/" class="project-link">Dataset Website →</a>
         </div>
 
-        <div class="flagship-work">
-            <h3>Automated Benchmark Generation for Knowledge Graph QA</h3>
-            <p class="work-meta">SIGMOD 2023, VLDB 2022 · System: Maestro</p>
-            <p class="work-description">
-                Created an automatic benchmark generation framework addressing evaluation bias and 
+        <div class="project">
+            <h3>Maestro: Automated Benchmark Generation for KGQA</h3>
+            <p class="project-meta">SIGMOD 2023, VLDB 2022 (with A. El-Roby)</p>
+            
+            <div class="project-image">
+                <img
+                    src="https://raw.githubusercontent.com/aorogat/QueryBridge/main/querybridge.png"
+                    alt="QueryBridge dataset and system overview"
+                />
+            </div>
+
+            
+            <p>
+                Created an automatic benchmark generation framework that addresses evaluation bias and 
                 coverage limitations in knowledge graph question answering. The system generates diverse, 
-                difficulty-controlled question sets through template-based synthesis and constraint solving, 
-                enabling more comprehensive and fair assessment of KGQA systems across multiple dimensions 
-                of linguistic and structural complexity.
+                difficulty-controlled question sets through template-based synthesis and constraint solving.
             </p>
         </div>
 
-        <div class="flagship-work">
+        <div class="project">
             <h3>Ericsogate: Enterprise Knowledge Graph Platform</h3>
-            <p class="work-meta">CIKM 2024 · Industry Collaboration with Ericsson</p>
-            <p class="work-description">
+            <p class="project-meta">CIKM 2024 (with S. L. Vadlamani, D. Thomas, A. El-Roby)</p>
+            
+            <div class="project-image">
+                <div class="diagram-placeholder">
+                    [Six-Layer Architecture]<br><br>
+                    Data Ingestion → Semantic Modeling → Graph Construction<br>
+                    Query Services → Application Layer
+                </div>
+            </div>
+            
+            <p>
                 Architected and deployed a production-grade knowledge graph platform for CloudRAN analytics 
-                at Ericsson. The system implements a six-layer architecture covering data ingestion, semantic 
-                modeling, graph construction, and application services. It provides semantic search, 
-                automated summarization, and retrieval-augmented exploration over heterogeneous operational data, 
-                demonstrating the viability of knowledge graph abstractions in large-scale industrial settings.
+                at Ericsson. The system provides semantic search, automated summarization, and 
+                retrieval-augmented exploration over heterogeneous operational data.
             </p>
-            <a href="https://aorogat.github.io/Ericsogate/" class="work-link">Project Page ↗</a>
+            <a href="https://aorogat.github.io/Ericsogate/" class="project-link">Project Page →</a>
         </div>
     </section>
 
-   <section id="publications">
-    <h2>Selected Publications</h2>
-    <ul class="pub-list">
+    <section id="publications">
+        <h2>Publications</h2>
+        
+        <ul class="pub-list">
+            <li class="pub-item">
+                <div class="pub-title">Chatty-KG: A Multi-Agent AI System for On-Demand Conversational Question Answering over Knowledge Graphs</div>
+                <div class="pub-authors">R. Omar, A. Orogat, I. Abdelaziz, O. Mangukiya, P. Kalnis, E. Mansour</div>
+                <div class="pub-venue">SIGMOD 2026</div>
+            </li>
 
-        <li class="pub-item">
-            <div class="pub-title">
-                Chatty-KG: A Multi-Agent AI System for On-Demand Conversational Question Answering over Knowledge Graphs
-            </div>
-            <div class="pub-authors">
-                R. Omar, <strong>A. Orogat</strong>, I. Abdelaziz, O. Mangukiya, P. Kalnis, E. Mansour
-            </div>
-            <div class="pub-venue">
-                ACM SIGMOD International Conference on Management of Data, 2026
-            </div>
-        </li>
+            <li class="pub-item">
+                <div class="pub-title">QueryBridge: One Million Annotated Questions with SPARQL Queries for Knowledge Graph Question Answering</div>
+                <div class="pub-authors">A. Orogat, A. El-Roby</div>
+                <div class="pub-venue">CIKM 2025</div>
+            </li>
 
-        <li class="pub-item">
-            <div class="pub-title">
-                QueryBridge: One Million Annotated Questions with SPARQL Queries for Knowledge Graph Question Answering
-            </div>
-            <div class="pub-authors">
-                <strong>A. Orogat</strong>, A. El-Roby
-            </div>
-            <div class="pub-venue">
-                ACM International Conference on Information and Knowledge Management (CIKM), 2025
-            </div>
-        </li>
+            <li class="pub-item">
+                <div class="pub-title">Ericsogate: Advancing Analytics and Management of Data from Diverse Sources within Ericsson Using Knowledge Graphs</div>
+                <div class="pub-authors">A. Orogat, S. L. Vadlamani, D. Thomas, A. El-Roby</div>
+                <div class="pub-venue">CIKM 2024</div>
+            </li>
 
-        <li class="pub-item">
-            <div class="pub-title">
-                Ericsogate: Advancing Analytics and Management of Data from Diverse Sources within Ericsson Using Knowledge Graphs
-            </div>
-            <div class="pub-authors">
-                <strong>A. Orogat</strong>, S. L. Vadlamani, D. Thomas, A. El-Roby
-            </div>
-            <div class="pub-venue">
-                ACM International Conference on Information and Knowledge Management (CIKM), 2024
-            </div>
-        </li>
+            <li class="pub-item">
+                <div class="pub-title">Maestro: Automatic Generation of Comprehensive Benchmarks for Question Answering over Knowledge Graphs</div>
+                <div class="pub-authors">A. Orogat, A. El-Roby</div>
+                <div class="pub-venue">SIGMOD 2023</div>
+            </li>
 
-        <li class="pub-item">
-            <div class="pub-title">
-                Maestro: Automatic Generation of Comprehensive Benchmarks for Question Answering over Knowledge Graphs
-            </div>
-            <div class="pub-authors">
-                <strong>A. Orogat</strong>, A. El-Roby
-            </div>
-            <div class="pub-venue">
-                ACM SIGMOD International Conference on Management of Data, 2023
-            </div>
-        </li>
+            <li class="pub-item">
+                <div class="pub-title">SmartBench: Demonstrating Automatic Generation of Comprehensive Benchmarks for Question Answering over Knowledge Graphs</div>
+                <div class="pub-authors">A. Orogat, A. El-Roby</div>
+                <div class="pub-venue">VLDB 2022 (Demo)</div>
+            </li>
 
-        <li class="pub-item">
-            <div class="pub-title">
-                SmartBench: Demonstrating Automatic Generation of Comprehensive Benchmarks for Question Answering over Knowledge Graphs
-            </div>
-            <div class="pub-authors">
-                <strong>A. Orogat</strong>, A. El-Roby
-            </div>
-            <div class="pub-venue">
-                International Conference on Very Large Data Bases (VLDB), 2022
-            </div>
-        </li>
-
-        <li class="pub-item">
-            <div class="pub-title">
-                CBench: Towards Better Evaluation of Question Answering over Knowledge Graphs
-            </div>
-            <div class="pub-authors">
-                <strong>A. Orogat</strong>, I. Liu, A. El-Roby
-            </div>
-            <div class="pub-venue">
-                International Conference on Very Large Data Bases (VLDB), 2021
-            </div>
-        </li>
-
-    </ul>
-</section>
-
+            <li class="pub-item">
+                <div class="pub-title">CBench: Towards Better Evaluation of Question Answering over Knowledge Graphs</div>
+                <div class="pub-authors">A. Orogat, I. Liu, A. El-Roby</div>
+                <div class="pub-venue">VLDB 2021</div>
+            </li>
+        </ul>
+    </section>
 
     <section id="teaching">
-    <h2>Teaching</h2>
-    <p class="teaching-summary">
-        I have served as a Contract Instructor in the School of Computer Science at Carleton University 
-        since 2022, teaching undergraduate and graduate courses in database systems. I have been fully 
-        responsible for course delivery in multiple offerings of Database Management Systems, including 
-        lecture preparation, assignment and project design, examinations, grading coordination with 
-        teaching assistants, and student support in large-enrollment classes.
-    </p>
+        <h2>Teaching</h2>
+        
+        <p>
+            I have served as a Contract Instructor at Carleton University since 2022, teaching 
+            database systems courses at undergraduate and graduate levels.
+        </p>
 
-    <div class="course-details">
-        <h4>COMP 3005 — Database Management Systems (Undergraduate)</h4>
-        <p>
-            <strong>Terms taught:</strong> Fall 2022, Fall 2023, Winter 2024, Fall 2025<br>
-            <strong>Role:</strong> Contract Instructor (100% load in Fall 2023; shared load with Prof. Ahmed El-Roby in Fall 2022 and Winter 2024)<br>
-            <strong>Enrollment:</strong> Ranged from approximately 130 to over 600 students
-        </p>
-        <p>
-            <strong>Topics:</strong> Relational model, SQL, ER modeling, normalization, query optimization, 
-            indexing, transaction processing, concurrency control, and recovery, as well as modern data 
-            management topics including NoSQL systems (MongoDB), graph databases (Neo4j), SPARQL, and 
-            distributed database architectures.
-        </p>
-        <p>
-            Across successive offerings, I progressively expanded the curriculum to include practical 
-            components on query execution planning, performance analysis, graph data modeling, and 
-            large-scale retrieval systems, drawing on both my research background and industry experience.
-        </p>
-    </div>
+        <div class="course">
+            <h4>COMP 3005 — Database Management Systems</h4>
+            <div class="course-info">
+                <strong>Institution:</strong> Carleton University (Undergraduate)<br>
+                <strong>Terms:</strong> Fall 2022, Fall 2023, Winter 2024, Fall 2025<br>
+                <strong>Enrollment:</strong> 130-600 students<br>
+                <strong>Topics:</strong> Relational model, SQL, ER modeling, normalization, query optimization, 
+                indexing, transaction processing, NoSQL systems, graph databases
+            </div>
+        </div>
 
-    <div class="course-details">
-        <h4>EGEN 5208 — Databases for Software Engineers (Graduate)</h4>
-        <p>
-            <strong>Term:</strong> Winter 2026 (scheduled)<br>
-            <strong>Role:</strong> Contract Instructor
-        </p>
-        <p>
-            This graduate-level course focuses on advanced database system design for software engineers, 
-            covering query processing, transaction management, scalable data architectures, and the 
-            integration of relational, document, and graph-based data models in modern software systems.
-        </p>
-    </div>
-</section>
+        <div class="course">
+            <h4>EGEN 5208 — Databases for Software Engineers</h4>
+            <div class="course-info">
+                <strong>Institution:</strong> Carleton University (Graduate)<br>
+                <strong>Term:</strong> Winter 2026 (scheduled)<br>
+                <strong>Topics:</strong> Advanced database system design, query processing, transaction management, 
+                scalable architectures, integration of relational, document, and graph data models
+            </div>
+        </div>
+    </section>
 
-
-    <section id="awards">
-        <h2>Awards & Funding</h2>
-        <ul class="award-list">
+    <section id="awards" class="awards">
+        <h2>Awards & Honors</h2>
+        <ul>
             <li><strong>NSERC CREATE Postdoctoral Award</strong> (2025)</li>
             <li><strong>Mitacs Industrial Fellowship</strong> — 12-month collaboration with Ericsson</li>
             <li><strong>SIGMOD Travel Award</strong> (2023)</li>
@@ -555,10 +575,9 @@ footer {
     </section>
 
     <footer>
-        <p>© 2025 Abdelghny Orogat · Last updated December 2025</p>
+        <p>Last updated: December 2025</p>
     </footer>
 </div>
 
 </body>
 </html>
-
