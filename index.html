@@ -463,11 +463,8 @@ footer {
             <p class="project-meta">CIKM 2025 (with A. El-Roby)</p>
             
             <div class="project-image">
-                <div class="diagram-placeholder">
-                    [Dataset Overview]<br><br>
-                    1,000,000+ question-SPARQL pairs<br>
-                    Multiple knowledge graphs<br>
-                    Diverse query patterns
+                <div class="hf-box" id="explorer">
+                    <iframe src="https://huggingface.co/datasets/aorogat/QueryBridge/embed/viewer" frameBorder="0" width="100%" height="560px"></iframe>
                 </div>
             </div>
             
@@ -481,22 +478,28 @@ footer {
         </div>
 
         <div class="project">
-            <h3>Maestro: Automated Benchmark Generation for KGQA</h3>
-            <p class="project-meta">SIGMOD 2023, VLDB 2022 (with A. El-Roby)</p>
-            
-            <div class="project-image">
-                <div class="hf-box" id="explorer">
-                    <iframe src="https://huggingface.co/datasets/aorogat/QueryBridge/embed/viewer" frameBorder="0" width="100%" height="560px"></iframe>
-                </div>
-            </div>
+    <h3>Maestro: Automated Benchmark Generation for KGQA</h3>
+    <p class="project-meta">SIGMOD 2023, VLDB 2022 (with A. El-Roby)</p>
+    
+    <div class="project-image">
+        <img
+            src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/main/maestro.png"
+            alt="Maestro benchmark generation pipeline for knowledge graph question answering"
+        />
+        <p style="font-size: 13px; color: #666; margin-top: 6px;">
+            Maestro benchmark generation pipeline: template-driven synthesis, constraint-based instantiation,
+            and difficulty-controlled question generation for KGQA evaluation.
+        </p>
+    </div>
 
-            
-            <p>
-                Created an automatic benchmark generation framework that addresses evaluation bias and 
-                coverage limitations in knowledge graph question answering. The system generates diverse, 
-                difficulty-controlled question sets through template-based synthesis and constraint solving.
-            </p>
-        </div>
+    <p>
+        Created an automatic benchmark generation framework that addresses evaluation bias and coverage
+        limitations in knowledge graph question answering. Maestro systematically generates diverse,
+        difficulty-controlled question sets through template-based synthesis and constraint solving,
+        enabling comprehensive and fair evaluation of KGQA systems across multiple dimensions.
+    </p>
+</div>
+
 
         <div class="project">
             <h3>Ericsogate: Enterprise Knowledge Graph Platform</h3>
@@ -519,47 +522,89 @@ footer {
         </div>
     </section>
 
-    <section id="publications">
-        <h2>Publications</h2>
-        
-        <ul class="pub-list">
-            <li class="pub-item">
-                <div class="pub-title">Chatty-KG: A Multi-Agent AI System for On-Demand Conversational Question Answering over Knowledge Graphs</div>
-                <div class="pub-authors">R. Omar, A. Orogat, I. Abdelaziz, O. Mangukiya, P. Kalnis, E. Mansour</div>
-                <div class="pub-venue">SIGMOD 2026</div>
-            </li>
+    <section id="top-publications">
+    <h2>Publications in SIGMOD, VLDB, and CIKM</h2>
 
-            <li class="pub-item">
-                <div class="pub-title">QueryBridge: One Million Annotated Questions with SPARQL Queries for Knowledge Graph Question Answering</div>
-                <div class="pub-authors">A. Orogat, A. El-Roby</div>
-                <div class="pub-venue">CIKM 2025</div>
-            </li>
+    <ul class="pub-list">
 
-            <li class="pub-item">
-                <div class="pub-title">Ericsogate: Advancing Analytics and Management of Data from Diverse Sources within Ericsson Using Knowledge Graphs</div>
-                <div class="pub-authors">A. Orogat, S. L. Vadlamani, D. Thomas, A. El-Roby</div>
-                <div class="pub-venue">CIKM 2024</div>
-            </li>
+        <!-- SIGMOD -->
+        <li class="pub-item">
+            <div class="pub-title">
+                Chatty-KG: A Multi-Agent System for Conversational Question Answering over Knowledge Graphs
+            </div>
+            <div class="pub-authors">
+                R. Omar, <strong>A. Orogat</strong>, I. Abdelaziz, O. Mangukiya, P. Kalnis, E. Mansour
+            </div>
+            <div class="pub-venue">
+                ACM SIGMOD International Conference on Management of Data (SIGMOD), 2026
+            </div>
+        </li>
 
-            <li class="pub-item">
-                <div class="pub-title">Maestro: Automatic Generation of Comprehensive Benchmarks for Question Answering over Knowledge Graphs</div>
-                <div class="pub-authors">A. Orogat, A. El-Roby</div>
-                <div class="pub-venue">SIGMOD 2023</div>
-            </li>
+        <li class="pub-item">
+            <div class="pub-title">
+                Maestro: Automatic Generation of Comprehensive Benchmarks for Question Answering over Knowledge Graphs
+            </div>
+            <div class="pub-authors">
+                <strong>A. Orogat</strong>, A. El-Roby
+            </div>
+            <div class="pub-venue">
+                ACM SIGMOD International Conference on Management of Data (SIGMOD), 2023
+            </div>
+        </li>
 
-            <li class="pub-item">
-                <div class="pub-title">SmartBench: Demonstrating Automatic Generation of Comprehensive Benchmarks for Question Answering over Knowledge Graphs</div>
-                <div class="pub-authors">A. Orogat, A. El-Roby</div>
-                <div class="pub-venue">VLDB 2022 (Demo)</div>
-            </li>
+        <!-- VLDB -->
+        <li class="pub-item">
+            <div class="pub-title">
+                CBench: Towards Better Evaluation of Question Answering over Knowledge Graphs
+            </div>
+            <div class="pub-authors">
+                <strong>A. Orogat</strong>, I. Liu, A. El-Roby
+            </div>
+            <div class="pub-venue">
+                International Conference on Very Large Data Bases (VLDB), 2021
+            </div>
+        </li>
 
-            <li class="pub-item">
-                <div class="pub-title">CBench: Towards Better Evaluation of Question Answering over Knowledge Graphs</div>
-                <div class="pub-authors">A. Orogat, I. Liu, A. El-Roby</div>
-                <div class="pub-venue">VLDB 2021</div>
-            </li>
-        </ul>
-    </section>
+        <li class="pub-item">
+            <div class="pub-title">
+                SmartBench: Demonstrating Automatic Generation of Comprehensive Benchmarks for Question Answering over Knowledge Graphs
+            </div>
+            <div class="pub-authors">
+                <strong>A. Orogat</strong>, A. El-Roby
+            </div>
+            <div class="pub-venue">
+                International Conference on Very Large Data Bases (VLDB), 2022 (Demo)
+            </div>
+        </li>
+
+        <!-- CIKM -->
+        <li class="pub-item">
+            <div class="pub-title">
+                QueryBridge: One Million Annotated Questions with SPARQL Queries for Knowledge Graph Question Answering
+            </div>
+            <div class="pub-authors">
+                <strong>A. Orogat</strong>, A. El-Roby
+            </div>
+            <div class="pub-venue">
+                ACM International Conference on Information and Knowledge Management (CIKM), 2025
+            </div>
+        </li>
+
+        <li class="pub-item">
+            <div class="pub-title">
+                Ericsogate: Advancing Analytics and Data Management from Heterogeneous Sources Using Knowledge Graphs
+            </div>
+            <div class="pub-authors">
+                <strong>A. Orogat</strong>, S. L. Vadlamani, D. Thomas, A. El-Roby
+            </div>
+            <div class="pub-venue">
+                ACM International Conference on Information and Knowledge Management (CIKM), 2024
+            </div>
+        </li>
+
+    </ul>
+</section>
+
 
     <section id="teaching">
         <h2>Teaching</h2>
@@ -607,6 +652,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
