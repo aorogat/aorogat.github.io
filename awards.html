@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Awards - Abdelghny Orogat</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Header */
+header {
+    padding: 40px 0 30px 0;
+    border-bottom: 2px solid #333;
+    margin-bottom: 40px;
+}
+
+.header-content {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.photo {
+    margin-top: 8px;
+}
+
+.photo img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 90px;
+    border: none;
+    filter: grayscale(5%) contrast(0.95);
+}
+
+.header-text h1 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.title {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.contact {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+.contact a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+    margin: 30px 0;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+nav a {
+    color: #0066cc;
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    margin-bottom: 45px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #000;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #000;
+}
+
+h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+    color: #000;
+}
+
+p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* Awards */
+.awards ul {
+    list-style: none;
+}
+
+.awards li {
+    margin: 12px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 15px;
+}
+
+.awards li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+    
+    .photo img {
+        width: 150px;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    header {
+        padding: 30px 0 20px 0;
+    }
+    
+    h1 {
+        font-size: 26px !important;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    nav a {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-content">
+            <div class="photo">
+                <img 
+                    src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/main/img.png"
+                    alt="Abdelghny Orogat"
+                />
+            </div>
+
+            <div class="header-text">
+                <h1>Abdelghny Orogat</h1>
+                <div class="title">Postdoctoral Fellow</div>
+                <div class="title">Department of Computer Science and Software Engineering<br>Concordia University</div>
+                <div class="contact">
+                    <strong>Email:</strong> <a href="mailto:abdelghny.orogat@concordia.ca">abdelghny.orogat@concordia.ca</a><br>
+                    <strong>Office:</strong> TBD<br>
+                    <strong>PhD:</strong> Computer Science, Carleton University
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="awards.html">Awards</a>
+        <a href="talks.html">Talks</a>
+    </nav>
+
+    <section id="awards" class="awards">
+        <h2>Awards & Honors</h2>
+        <ul>
+            <li><strong>NSERC CREATE Postdoctoral Award</strong> (2025)</li>
+            <li><strong>Mitacs Industrial Fellowship</strong> — 12-month collaboration with Ericsson</li>
+            <li><strong>SIGMOD Travel Award</strong> (2023)</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Last updated: December 2025</p>
+    </footer>
+</div>
+
+</body>
+</html>
+

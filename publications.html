@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Publications - Abdelghny Orogat</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Header */
+header {
+    padding: 40px 0 30px 0;
+    border-bottom: 2px solid #333;
+    margin-bottom: 40px;
+}
+
+.header-content {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.photo {
+    margin-top: 8px;
+}
+
+.photo img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 90px;
+    border: none;
+    filter: grayscale(5%) contrast(0.95);
+}
+
+.header-text h1 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.title {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.contact {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+.contact a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+    margin: 30px 0;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+nav a {
+    color: #0066cc;
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    margin-bottom: 45px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #000;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #000;
+}
+
+h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+    color: #000;
+}
+
+p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* Publications */
+.pub-list {
+    list-style: none;
+}
+
+.pub-item {
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.pub-item:last-child {
+    border-bottom: none;
+}
+
+.pub-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.pub-authors {
+    font-size: 14px;
+    color: #555;
+    margin: 3px 0;
+}
+
+.pub-venue {
+    font-size: 14px;
+    color: #0066cc;
+    font-style: italic;
+}
+
+.pub-venue a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.pub-venue a:hover {
+    text-decoration: underline;
+}
+
+.pub-links {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.pub-links a {
+    color: #0066cc;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.pub-links a:hover {
+    text-decoration: underline;
+}
+
+.pub-links a[href*="github.com"] {
+    padding-left: 20px;
+    background-image: url('github-mark.png');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.pub-links a[href*="arxiv.org"]::before {
+    content: "📄 ";
+    margin-right: 4px;
+}
+
+.pub-links a[href*="huggingface.co"]::before {
+    content: "🤗 ";
+    margin-right: 4px;
+}
+
+.pub-links a[href*="github.io"]::before {
+    content: "🌐 ";
+    margin-right: 4px;
+}
+
+.pub-links a[href*="dl.acm.org"]::before {
+    content: "📑 ";
+    margin-right: 4px;
+}
+
+.pub-links a[href*="youtube.com"]::before {
+    content: "▶️ ";
+    margin-right: 4px;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+    
+    .photo img {
+        width: 150px;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    header {
+        padding: 30px 0 20px 0;
+    }
+    
+    h1 {
+        font-size: 26px !important;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    nav a {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-content">
+            <div class="photo">
+                <img 
+                    src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/main/img.png"
+                    alt="Abdelghny Orogat"
+                />
+            </div>
+
+            <div class="header-text">
+                <h1>Abdelghny Orogat</h1>
+                <div class="title">Postdoctoral Fellow</div>
+                <div class="title">Department of Computer Science and Software Engineering<br>Concordia University</div>
+                <div class="contact">
+                    <strong>Email:</strong> <a href="mailto:abdelghny.orogat@concordia.ca">abdelghny.orogat@concordia.ca</a><br>
+                    <strong>Office:</strong> TBD<br>
+                    <strong>PhD:</strong> Computer Science, Carleton University
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="awards.html">Awards</a>
+        <a href="talks.html">Talks</a>
+    </nav>
+
+    <section id="publications">
+        <h2>Selected Publications</h2>
+
+        <ul class="pub-list">
+            <li class="pub-item">
+                <div class="pub-title">
+                    Chatty-KG: A Multi-Agent AI System for On-Demand Conversational Question Answering over Knowledge Graphs
+                </div>
+                <div class="pub-authors">
+                    R. Omar, <strong>A. Orogat</strong>, I. Abdelaziz, O. Mangukiya, P. Kalnis, E. Mansour
+                </div>
+                <div class="pub-venue">
+                    ACM SIGMOD International Conference on Management of Data (SIGMOD), 2026
+                </div>
+                <div class="pub-links">
+                    <a href="https://github.com/CoDS-GCS/Chatty-KG">GitHub</a>
+                    <a href="https://arxiv.org/abs/2511.20940">arXiv</a>
+                </div>
+            </li>
+
+            <li class="pub-item">
+                <div class="pub-title">
+                    QueryBridge: One Million Annotated Questions with SPARQL Queries - Dataset for Question Answering over Knowledge Graphs
+                </div>
+                <div class="pub-authors">
+                    <strong>A. Orogat</strong>, A. El-Roby
+                </div>
+                <div class="pub-venue">
+                    <a href="https://dl.acm.org/doi/10.1145/3746252.3761623">ACM International Conference on Information and Knowledge Management (CIKM), 2025</a>
+                </div>
+                <div class="pub-links">
+                    <a href="https://dl.acm.org/doi/10.1145/3746252.3761623">Paper</a>
+                    <a href="https://aorogat.github.io/QueryBridge/">Project Website</a>
+                    <a href="https://github.com/aorogat/QueryBridge">GitHub</a>
+                    <a href="https://huggingface.co/datasets/aorogat/QueryBridge">Hugging Face</a>
+                </div>
+            </li>
+
+            <li class="pub-item">
+                <div class="pub-title">
+                    Ericsogate: Advancing Analytics and Management of Data from Diverse Sources within Ericsson Using Knowledge Graphs
+                </div>
+                <div class="pub-authors">
+                    <strong>A. Orogat</strong>, S. L. Vadlamani, D. Thomas, A. El-Roby
+                </div>
+                <div class="pub-venue">
+                    <a href="https://dl.acm.org/doi/10.1145/3627673.3680033">ACM International Conference on Information and Knowledge Management (CIKM), 2024</a>
+                </div>
+                <div class="pub-links">
+                    <a href="https://dl.acm.org/doi/10.1145/3627673.3680033">Paper</a>
+                    <a href="https://aorogat.github.io/Ericsogate/">Project Page</a>
+                </div>
+            </li>
+
+            <li class="pub-item">
+                <div class="pub-title">
+                    Maestro: Automatic Generation of Comprehensive Benchmarks for Question Answering Over Knowledge Graphs
+                </div>
+                <div class="pub-authors">
+                    <strong>A. Orogat</strong>, A. El-Roby
+                </div>
+                <div class="pub-venue">
+                    <a href="https://dl.acm.org/doi/10.1145/3589322">ACM SIGMOD International Conference on Management of Data (SIGMOD), 2023</a>
+                </div>
+                <div class="pub-links">
+                    <a href="https://dl.acm.org/doi/10.1145/3589322">Paper</a>
+                    <a href="https://github.com/aorogat/Maestro">GitHub</a>
+                </div>
+            </li>
+
+            <li class="pub-item">
+                <div class="pub-title">
+                    SmartBench: Demonstrating Automatic Generation of Comprehensive Benchmarks for Question Answering Over Knowledge Graphs
+                </div>
+                <div class="pub-authors">
+                    <strong>A. Orogat</strong>, A. El-Roby
+                </div>
+                <div class="pub-venue">
+                    <a href="https://dl.acm.org/doi/10.14778/3554821.3554869">International Conference on Very Large Data Bases (VLDB), 2022 (Demo)</a>
+                </div>
+                <div class="pub-links">
+                    <a href="https://dl.acm.org/doi/10.14778/3554821.3554869">Paper</a>
+                </div>
+            </li>
+
+            <li class="pub-item">
+                <div class="pub-title">
+                    CBench: Towards Better Evaluation of Question Answering Over Knowledge Graphs
+                </div>
+                <div class="pub-authors">
+                    <strong>A. Orogat</strong>, I. Liu, A. El-Roby
+                </div>
+                <div class="pub-venue">
+                    <a href="https://dl.acm.org/doi/10.14778/3457390.3457398">International Conference on Very Large Data Bases (VLDB), 2021</a>
+                </div>
+                <div class="pub-links">
+                    <a href="https://dl.acm.org/doi/10.14778/3457390.3457398">Paper</a>
+                    <a href="https://dl.acm.org/doi/10.14778/3476311.3476326">Demo Paper</a>
+                    <a href="https://github.com/aorogat/CBench">GitHub</a>
+                    <a href="https://www.youtube.com/watch?v=r9QvFTb60WM">Setup & Run Video</a>
+                    <a href="https://www.youtube.com/watch?v=_zbUbDTMgbI">Talk</a>
+                    <a href="https://www.youtube.com/watch?v=QT-q53jPhMc">Demo Talk</a>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Last updated: December 2025</p>
+    </footer>
+</div>
+
+</body>
+</html>
+

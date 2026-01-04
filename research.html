@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Research - Abdelghny Orogat</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Header */
+header {
+    padding: 40px 0 30px 0;
+    border-bottom: 2px solid #333;
+    margin-bottom: 40px;
+}
+
+.header-content {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.photo {
+    margin-top: 8px;
+}
+
+.photo img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 90px;
+    border: none;
+    filter: grayscale(5%) contrast(0.95);
+}
+
+.header-text h1 {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.title {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.contact {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+.contact a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+    margin: 30px 0;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+nav a {
+    color: #0066cc;
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    margin-bottom: 45px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #000;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #000;
+}
+
+h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+    color: #000;
+}
+
+p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* Big Project Container */
+.big-project {
+    margin: 40px 0;
+    padding: 30px 0;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.big-project:last-child {
+    border-bottom: none;
+}
+
+.big-project-header {
+    margin-bottom: 25px;
+}
+
+.big-project-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.big-project-description {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* Horizontal Scroll Container */
+.subprojects-container {
+    position: relative;
+    margin: 0 -30px;
+    padding: 0 30px;
+}
+
+.subprojects-scroll {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 20px 0 30px 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.subprojects-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.subprojects-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.subprojects-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.subprojects-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Subproject Card */
+.subproject-card {
+    flex: 0 0 400px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 4px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.subproject-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.subproject-card h3 {
+    font-size: 18px;
+    margin: 0 0 8px 0;
+    color: #000;
+}
+
+.subproject-meta {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.subproject-image {
+    width: 100%;
+    margin: 15px 0;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+}
+
+.subproject-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.subproject-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.subproject-link {
+    display: inline-block;
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-right: 15px;
+}
+
+.subproject-link:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+    
+    .photo img {
+        width: 150px;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    .subprojects-container {
+        margin: 0 -20px;
+        padding: 0 20px;
+    }
+    
+    .subproject-card {
+        flex: 0 0 320px;
+    }
+    
+    header {
+        padding: 30px 0 20px 0;
+    }
+    
+    h1 {
+        font-size: 26px !important;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    nav a {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-content">
+            <div class="photo">
+                <img 
+                    src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/main/img.png"
+                    alt="Abdelghny Orogat"
+                />
+            </div>
+
+            <div class="header-text">
+                <h1>Abdelghny Orogat</h1>
+                <div class="title">Postdoctoral Fellow</div>
+                <div class="title">Department of Computer Science and Software Engineering<br>Concordia University</div>
+                <div class="contact">
+                    <strong>Email:</strong> <a href="mailto:abdelghny.orogat@concordia.ca">abdelghny.orogat@concordia.ca</a><br>
+                    <strong>Office:</strong> TBD<br>
+                    <strong>PhD:</strong> Computer Science, Carleton University
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="awards.html">Awards</a>
+        <a href="talks.html">Talks</a>
+    </nav>
+
+    <section id="research">
+        <h2>Research</h2>
+        
+        <p>
+            My research addresses fundamental challenges in how AI systems can reason effectively over 
+            structured knowledge. I develop methods for decomposing complex reasoning tasks across 
+            specialized agents, designing comprehensive evaluation benchmarks, and building scalable 
+            knowledge graph systems for real-world applications.
+        </p>
+
+        <!-- Big Project: Multi-Agent Systems -->
+        <div class="big-project">
+            <div class="big-project-header">
+                <h3 class="big-project-title">Multi-Agent Systems</h3>
+                <p class="big-project-description">
+                    Research on the design, evaluation, and automation of large language model–based multi-agent systems.
+                    This line of work focuses on benchmarking coordination, memory, planning, tool use, and scalability
+                    across diverse multi-agent frameworks, as well as enabling natural-language-driven MAS design.
+                </p>
+            </div>
+
+            <div class="subprojects-container">
+                <div class="subprojects-scroll">
+
+                    <!-- MASBench -->
+                    <div class="subproject-card">
+                        <h3>MASBench: Multi-Agent Systems Benchmark</h3>
+                        <p class="subproject-meta">TBD</p>
+                        <p class="subproject-description">
+                            A unified and reproducible benchmark suite for evaluating LLM-based single-agent and
+                            multi-agent frameworks. MASBench systematically measures memory behavior, tool use,
+                            planning strategies, coordination protocols, specialization, and framework overhead
+                            under controlled experimental conditions.
+                        </p>
+                        <a href="https://github.com/aorogat/MASBench" class="subproject-link">GitHub →</a>
+                    </div>
+
+                    <!-- MAS-Automation -->
+                    <div class="subproject-card">
+                        <h3>MAS-Automation: Natural Language MAS Design</h3>
+                        <p class="subproject-meta">Demo / System Project</p>
+                        <p class="subproject-description">
+                            An interactive system that transforms natural language descriptions into fully specified
+                            multi-agent architectures. Supports requirement elicitation, agent role definition,
+                            topology selection, and live visualization, enabling rapid prototyping of complex
+                            multi-agent systems.
+                        </p>
+                        <a href="https://github.com/aorogat/multi-agent-automation" class="subproject-link">GitHub →</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Big Project: Question Answering over Knowledge Graphs -->
+        <div class="big-project">
+            <div class="big-project-header">
+                <h3 class="big-project-title">Question Answering over Knowledge Graphs</h3>
+                <p class="big-project-description">
+                    A comprehensive research program addressing the full pipeline of knowledge graph question 
+                    answering: from benchmark design and evaluation methodologies to large-scale dataset creation 
+                    and multi-agent system architectures. This work spans systematic evaluation frameworks, 
+                    automated benchmark generation, million-scale annotated datasets, and production-ready QA systems.
+                </p>
+            </div>
+
+            <div class="subprojects-container">
+                <div class="subprojects-scroll">
+                    
+                    <!-- Chatty-KG -->
+                    <div class="subproject-card">
+                        <h3>Chatty-KG: Multi-Agent QA System</h3>
+                        <p class="subproject-meta">SIGMOD 2026</p>
+                        <div class="subproject-image">
+                            <img
+                                src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/main/chatty_kg.png"
+                                alt="Chatty-KG architecture"
+                            />
+                        </div>
+                        <p class="subproject-description">
+                            A LangGraph-based multi-agent KGQA system that decomposes reasoning into 
+                            specialized agents for entity retrieval, query planning, validation, and 
+                            execution over large knowledge graphs.
+                        </p>
+                        <a href="https://github.com/CoDS-GCS/Chatty-KG" class="subproject-link">GitHub →</a>
+                        <a href="https://arxiv.org/abs/2511.20940" class="subproject-link">arXiv →</a>
+                    </div>
+
+                    <!-- QueryBridge -->
+                    <div class="subproject-card">
+                        <h3>QueryBridge: Large-Scale Dataset</h3>
+                        <p class="subproject-meta">CIKM 2025</p>
+                        <p class="subproject-description">
+                            <strong>1+ million</strong> natural language questions paired with executable SPARQL queries.
+                            The largest annotated KGQA dataset, enabling research on complex query structures
+                            and semantic diversity.
+                        </p>
+                        <a href="https://aorogat.github.io/QueryBridge/" class="subproject-link">Project Website →</a>
+                        <a href="https://github.com/aorogat/QueryBridge" class="subproject-link">GitHub →</a>
+                        <a href="https://huggingface.co/datasets/aorogat/QueryBridge" class="subproject-link">Hugging Face →</a>
+                    </div>
+
+                    <!-- Maestro -->
+                    <div class="subproject-card">
+                        <h3>Maestro: Benchmark Generation</h3>
+                        <p class="subproject-meta">SIGMOD 2023, VLDB 2022</p>
+                        <div class="subproject-image">
+                            <img
+                                src="https://raw.githubusercontent.com/aorogat/QueryBridge/main/maestro.png"
+                                alt="Maestro pipeline"
+                            />
+                        </div>
+                        <p class="subproject-description">
+                            Automatic benchmark generation framework using template-driven synthesis and 
+                            constraint-based instantiation to create diverse and difficulty-controlled 
+                            KGQA evaluation sets.
+                        </p>
+                        <a href="https://github.com/aorogat/Maestro" class="subproject-link">GitHub →</a>
+                    </div>
+
+                    <!-- CBench -->
+                    <div class="subproject-card">
+                        <h3>CBench: Benchmark Analysis</h3>
+                        <p class="subproject-meta">VLDB 2021</p>
+                        <p class="subproject-description">
+                            Systematic analysis of KGQA benchmarks, exposing limitations in coverage, 
+                            difficulty balance, and evaluation bias. Introduced principled benchmark 
+                            design and evaluation guidelines.
+                        </p>
+                    
+                        <div class="subproject-links">
+                            <a href="https://github.com/aorogat/CBench" class="subproject-link">GitHub →</a>
+                            <a href="https://www.youtube.com/watch?v=r9QvFTb60WM" class="subproject-link">Setup & Run Video →</a>
+                            <a href="https://www.youtube.com/watch?v=_zbUbDTMgbI" class="subproject-link">Talk →</a>
+                            <a href="https://www.youtube.com/watch?v=QT-q53jPhMc" class="subproject-link">Demo Talk →</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Ericsogate Project (standalone for now) -->
+        <div class="big-project">
+            <div class="big-project-header">
+                <h3 class="big-project-title">Enterprise Knowledge Graph Systems</h3>
+                <p class="big-project-description">
+                    Applied research in production knowledge graph platforms for enterprise analytics, 
+                    semantic search, and operational data management.
+                </p>
+            </div>
+
+            <div class="subprojects-container">
+                <div class="subprojects-scroll">
+                    
+                    <div class="subproject-card">
+                        <h3>Ericsogate: CloudRAN Analytics Platform</h3>
+                        <p class="subproject-meta">CIKM 2024</p>
+                        <div class="subproject-image">
+                            <img
+                                src="https://raw.githubusercontent.com/aorogat/Ericsogate/main/Ericsogate%20Framework.png"
+                                alt="Ericsogate framework"
+                            />
+                        </div>
+                        <p class="subproject-description">
+                            Production-grade knowledge graph platform for CloudRAN analytics at Ericsson. 
+                            Provides semantic search, automated summarization, and retrieval-augmented 
+                            exploration over heterogeneous operational data.
+                        </p>
+                        <a href="https://aorogat.github.io/Ericsogate/" class="subproject-link">Project Page →</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Last updated: December 2025</p>
+    </footer>
+</div>
+
+</body>
+</html>
+
