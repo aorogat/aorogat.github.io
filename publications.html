@@ -190,9 +190,12 @@ p {
     background-position: left center;
 }
 
-.pub-links a[href*="arxiv.org"]::before {
-    content: "📄 ";
-    margin-right: 4px;
+.pub-links a[href*="arxiv.org"] {
+    padding-left: 20px;
+    background-image: url('https://arxiv.org/favicon.ico');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: left center;
 }
 
 .pub-links a[href*="huggingface.co"]::before {
