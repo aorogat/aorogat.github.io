@@ -249,6 +249,37 @@ p {
     text-decoration: underline;
 }
 
+.subproject-link[href*="github.com"] {
+    padding-left: 20px;
+    background-image: url('github-mark.png');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.subproject-link[href*="arxiv.org"] {
+    padding-left: 20px;
+    background-image: url('https://arxiv.org/favicon.ico');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.subproject-link[href*="huggingface.co"]::before {
+    content: "🤗 ";
+    margin-right: 4px;
+}
+
+.subproject-link[href*="github.io"]::before {
+    content: "🌐 ";
+    margin-right: 4px;
+}
+
+.subproject-link[href*="dl.acm.org"]::before {
+    content: "📑 ";
+    margin-right: 4px;
+}
+
 /* Footer */
 footer {
     margin-top: 50px;
@@ -350,9 +381,7 @@ footer {
             <div class="big-project-header">
                 <h3 class="big-project-title">Multi-Agent Systems</h3>
                 <p class="big-project-description">
-                    Research on the design, evaluation, and automation of large language model–based multi-agent systems.
-                    This line of work focuses on benchmarking coordination, memory, planning, tool use, and scalability
-                    across diverse multi-agent frameworks, as well as enabling natural-language-driven MAS design.
+                    My research investigates the design, evaluation, and automation of large language model-based multi-agent systems (MAS). I study how architectural choices such as orchestration structure, memory organization, planning interfaces, agent specialization, and communication topology fundamentally affect system performance, scalability, and coordination. A central focus of this work is developing controlled benchmarking methodologies that isolate architectural effects from model capability. Through large-scale empirical evaluation across popular multi-agent frameworks, my research demonstrates that framework-level design choices alone can induce order-of-magnitude differences in latency, accuracy, and coordination success. Building on these insights, I develop systems for automating multi-agent architecture design from natural language specifications, enabling systematic exploration of MAS design spaces and rapid prototyping of complex agent workflows. I apply these architectural principles to real-world multi-agent reasoning systems, including large-scale knowledge graph question answering platforms such as Chatty-KG, which decompose complex reasoning into specialized agents for entity retrieval, query planning, validation, and execution.
                 </p>
             </div>
 
@@ -370,12 +399,11 @@ footer {
                             />
                         </div>
                         <p class="subproject-description">
-                            A unified and reproducible benchmark suite for evaluating LLM-based single-agent and
-                            multi-agent frameworks. MAFBench systematically measures memory behavior, tool use,
-                            planning strategies, coordination protocols, specialization, and framework overhead
-                            under controlled experimental conditions.
+                            MAFBench is a unified and reproducible benchmark suite for evaluating single-agent and
+                            multi-agent LLM frameworks under standardized execution conditions. It systematically measures orchestration overhead, memory behavior, planning strategies, specialization effects, tool use, and coordination protocols, enabling fair architectural comparison across frameworks.
                         </p>
-                        <a href="https://github.com/aorogat/MASBench" class="subproject-link">GitHub →</a>
+                        <a href="https://aorogat.github.io/Multi_Agent_Design/" class="subproject-link">Project Website</a>
+                        <a href="https://github.com/aorogat/MASBench" class="subproject-link">Code</a>
                     </div>
 
                     <!-- MAS-Automation -->
@@ -389,12 +417,28 @@ footer {
                             />
                         </div>
                         <p class="subproject-description">
-                            An interactive system that transforms natural language descriptions into fully specified
-                            multi-agent architectures. Supports requirement elicitation, agent role definition,
-                            topology selection, and live visualization, enabling rapid prototyping of complex
-                            multi-agent systems.
+                            MAS-Automation is an interactive system that translates natural language requirements into complete multi-agent architectures. The system supports automated requirement elicitation, agent role definition, communication topology selection, and workflow generation, facilitating rapid MAS prototyping and design optimization.
                         </p>
-                        <a href="https://github.com/aorogat/multi-agent-automation" class="subproject-link">GitHub →</a>
+                        <a href="https://github.com/aorogat/multi-agent-automation" class="subproject-link">Code</a>
+                    </div>
+
+                    <!-- Chatty-KG -->
+                    <div class="subproject-card">
+                        <h3>Chatty-KG: Multi-Agent QA System</h3>
+                        <p class="subproject-meta">SIGMOD 2026</p>
+                        <div class="subproject-image">
+                            <img
+                                src="https://raw.githubusercontent.com/aorogat/aorogat.github.io/main/chatty_kg.png"
+                                alt="Chatty-KG architecture"
+                            />
+                        </div>
+                        <p class="subproject-description">
+                            A LangGraph-based multi-agent KGQA system that decomposes reasoning into 
+                            specialized agents for entity retrieval, query planning, validation, and 
+                            execution over large knowledge graphs.
+                        </p>
+                        <a href="https://arxiv.org/abs/2511.20940" class="subproject-link">arXiv</a>
+                        <a href="https://github.com/CoDS-GCS/Chatty-KG" class="subproject-link">Code</a>
                     </div>
 
                 </div>
@@ -432,8 +476,8 @@ footer {
                             specialized agents for entity retrieval, query planning, validation, and 
                             execution over large knowledge graphs.
                         </p>
-                        <a href="https://arxiv.org/abs/2511.20940" class="subproject-link">arXiv →</a>
-                        <a href="https://github.com/CoDS-GCS/Chatty-KG" class="subproject-link">GitHub →</a>
+                        <a href="https://arxiv.org/abs/2511.20940" class="subproject-link">arXiv</a>
+                        <a href="https://github.com/CoDS-GCS/Chatty-KG" class="subproject-link">Code</a>
                     </div>
 
                     <!-- QueryBridge -->
@@ -451,10 +495,10 @@ footer {
                             The largest annotated KGQA dataset, enabling research on complex query structures
                             and semantic diversity.
                         </p>
-                        <a href="https://dl.acm.org/doi/10.1145/3746252.3761623" class="subproject-link">Paper →</a>
-                        <a href="https://github.com/aorogat/QueryBridge" class="subproject-link">GitHub →</a>
-                        <a href="https://huggingface.co/datasets/aorogat/QueryBridge" class="subproject-link">Hugging Face →</a>
-                        <a href="https://aorogat.github.io/QueryBridge/" class="subproject-link">Project Website →</a>
+                        <a href="https://dl.acm.org/doi/10.1145/3746252.3761623" class="subproject-link">Paper</a>
+                        <a href="https://github.com/aorogat/QueryBridge" class="subproject-link">Code</a>
+                        <a href="https://huggingface.co/datasets/aorogat/QueryBridge" class="subproject-link">Hugging Face</a>
+                        <a href="https://aorogat.github.io/QueryBridge/" class="subproject-link">Project Website</a>
                     </div>
 
                     <!-- Maestro -->
@@ -472,8 +516,8 @@ footer {
                             constraint-based instantiation to create diverse and difficulty-controlled 
                             KGQA evaluation sets.
                         </p>
-                        <a href="https://dl.acm.org/doi/10.1145/3589322" class="subproject-link">Paper →</a>
-                        <a href="https://github.com/aorogat/Maestro" class="subproject-link">GitHub →</a>
+                        <a href="https://dl.acm.org/doi/10.1145/3589322" class="subproject-link">Paper</a>
+                        <a href="https://github.com/aorogat/Maestro" class="subproject-link">Code</a>
                     </div>
 
                     <!-- CBench -->
@@ -491,11 +535,8 @@ footer {
                             difficulty balance, and evaluation bias. Introduced principled benchmark 
                             design and evaluation guidelines.
                         </p>
-                        <a href="https://dl.acm.org/doi/10.14778/3457390.3457398" class="subproject-link">Paper →</a>
-                        <a href="https://github.com/aorogat/CBench" class="subproject-link">GitHub →</a>
-                        <a href="https://www.youtube.com/watch?v=r9QvFTb60WM" class="subproject-link">Setup & Run Video →</a>
-                        <a href="https://www.youtube.com/watch?v=_zbUbDTMgbI" class="subproject-link">Talk →</a>
-                        <a href="https://www.youtube.com/watch?v=QT-q53jPhMc" class="subproject-link">Demo Talk →</a>
+                        <a href="https://dl.acm.org/doi/10.14778/3457390.3457398" class="subproject-link">Paper</a>
+                        <a href="https://github.com/aorogat/CBench" class="subproject-link">Code</a>
                     </div>
 
 
@@ -530,8 +571,8 @@ footer {
                             Provides semantic search, automated summarization, and retrieval-augmented 
                             exploration over heterogeneous operational data.
                         </p>
-                        <a href="https://dl.acm.org/doi/10.1145/3627673.3680033" class="subproject-link">Paper →</a>
-                        <a href="https://aorogat.github.io/Ericsogate/" class="subproject-link">Project Page →</a>
+                        <a href="https://dl.acm.org/doi/10.1145/3627673.3680033" class="subproject-link">Paper</a>
+                        <a href="https://aorogat.github.io/Ericsogate/" class="subproject-link">Project Page</a>
                     </div>
 
                 </div>
